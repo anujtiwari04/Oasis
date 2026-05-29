@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronRight, Menu, X, Phone } from "lucide-react";
 import oasisLogo from "@/assets/Oasis Logo.png";
+import postalBallotNotice from "@/assets/postal-ballot-notice.pdf";
 
 const navLinks = [
   { href: "#home", label: "Home" },
@@ -12,8 +13,8 @@ const navLinks = [
 ];
 
 const postalBallotItems = [
-  { href: "#", label: "Notice" },
-  { href: "#", label: "Scrutinizer's Report" },
+  { href: postalBallotNotice, label: "Notice", download: "postal-ballot-notice.pdf" },
+  { href: "/scrutinizers-report", label: "Scrutinizer's Report" },
   { href: "#", label: "Voting Result and Scrutinizer Report" },
 ];
 
@@ -113,6 +114,7 @@ export function Header() {
                               <li key={child.label} className="border-b border-slate-100 last:border-b-0">
                                 <a
                                   href={child.href}
+                                  download={child.download}
                                   className="block min-h-11 px-4 py-3 text-sm font-semibold leading-snug hover:bg-slate-50 hover:text-slate-900 focus:bg-slate-50 focus:text-slate-900 focus:outline-none"
                                 >
                                   {child.label}
@@ -209,6 +211,7 @@ export function Header() {
                                   <a
                                     key={child.label}
                                     href={child.href}
+                                    download={child.download}
                                     onClick={() => setOpen(false)}
                                     className="block px-8 py-2 text-sm text-slate-600 hover:text-slate-900"
                                   >

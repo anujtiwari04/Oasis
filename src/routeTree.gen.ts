@@ -9,8 +9,14 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ScrutinizersReportRouteImport } from './routes/scrutinizers-report'
 import { Route as IndexRouteImport } from './routes/index'
 
+const ScrutinizersReportRoute = ScrutinizersReportRouteImport.update({
+  id: '/scrutinizers-report',
+  path: '/scrutinizers-report',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +25,39 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/scrutinizers-report': typeof ScrutinizersReportRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/scrutinizers-report': typeof ScrutinizersReportRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/scrutinizers-report': typeof ScrutinizersReportRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/scrutinizers-report'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/scrutinizers-report'
+  id: '__root__' | '/' | '/scrutinizers-report'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ScrutinizersReportRoute: typeof ScrutinizersReportRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/scrutinizers-report': {
+      id: '/scrutinizers-report'
+      path: '/scrutinizers-report'
+      fullPath: '/scrutinizers-report'
+      preLoaderRoute: typeof ScrutinizersReportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,6 +70,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ScrutinizersReportRoute: ScrutinizersReportRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
