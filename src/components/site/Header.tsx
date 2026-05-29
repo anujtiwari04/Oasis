@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronRight, Menu, X, Phone } from "lucide-react";
 import oasisLogo from "@/assets/Oasis Logo.png";
 import postalBallotNotice from "@/assets/postal-ballot-notice.pdf";
+import compositionOfCommittees from "@/assets/COMPOSITION OF COMMITTEES.pdf";
 
 const navLinks = [
   { href: "#home", label: "Home" },
@@ -20,8 +21,8 @@ const postalBallotItems = [
 
 const corporateItems = [
   { href: "#", label: "Postal Ballot", children: postalBallotItems },
-  { href: "#", label: "Composition of Committees" },
-  { href: "#", label: "Board of Directors" },
+  { href: compositionOfCommittees, label: "Composition of Committees", download: "COMPOSITION OF COMMITTEES.pdf" },
+  { href: "/board-of-directors", label: "Board of Directors" },
   { href: "#", label: "Key Management Personnel" },
   { href: "#", label: "Compliance Officer" },
   { href: "#", label: "Policies" },
@@ -96,6 +97,7 @@ export function Header() {
                             >
                               <a
                                 href={item.href}
+                                download={item.download}
                                 className="flex min-h-11 items-center justify-between gap-3 px-4 py-3 text-sm font-semibold leading-snug hover:bg-slate-50 hover:text-slate-900 focus:bg-slate-50 focus:text-slate-900 focus:outline-none"
                               >
                                 <span>{item.label}</span>
@@ -200,6 +202,7 @@ export function Header() {
                           <div key={item.label}>
                             <a
                               href={item.href}
+                              download={item.download}
                               onClick={() => setOpen(false)}
                               className="block px-5 py-2.5 text-sm font-medium text-slate-700 hover:text-slate-900"
                             >

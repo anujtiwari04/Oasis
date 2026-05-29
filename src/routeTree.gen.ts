@@ -10,11 +10,17 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ScrutinizersReportRouteImport } from './routes/scrutinizers-report'
+import { Route as BoardOfDirectorsRouteImport } from './routes/board-of-directors'
 import { Route as IndexRouteImport } from './routes/index'
 
 const ScrutinizersReportRoute = ScrutinizersReportRouteImport.update({
   id: '/scrutinizers-report',
   path: '/scrutinizers-report',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BoardOfDirectorsRoute = BoardOfDirectorsRouteImport.update({
+  id: '/board-of-directors',
+  path: '/board-of-directors',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -25,27 +31,31 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/board-of-directors': typeof BoardOfDirectorsRoute
   '/scrutinizers-report': typeof ScrutinizersReportRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/board-of-directors': typeof BoardOfDirectorsRoute
   '/scrutinizers-report': typeof ScrutinizersReportRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/board-of-directors': typeof BoardOfDirectorsRoute
   '/scrutinizers-report': typeof ScrutinizersReportRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/scrutinizers-report'
+  fullPaths: '/' | '/board-of-directors' | '/scrutinizers-report'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/scrutinizers-report'
-  id: '__root__' | '/' | '/scrutinizers-report'
+  to: '/' | '/board-of-directors' | '/scrutinizers-report'
+  id: '__root__' | '/' | '/board-of-directors' | '/scrutinizers-report'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BoardOfDirectorsRoute: typeof BoardOfDirectorsRoute
   ScrutinizersReportRoute: typeof ScrutinizersReportRoute
 }
 
@@ -56,6 +66,13 @@ declare module '@tanstack/react-router' {
       path: '/scrutinizers-report'
       fullPath: '/scrutinizers-report'
       preLoaderRoute: typeof ScrutinizersReportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/board-of-directors': {
+      id: '/board-of-directors'
+      path: '/board-of-directors'
+      fullPath: '/board-of-directors'
+      preLoaderRoute: typeof BoardOfDirectorsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -70,6 +87,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BoardOfDirectorsRoute: BoardOfDirectorsRoute,
   ScrutinizersReportRoute: ScrutinizersReportRoute,
 }
 export const routeTree = rootRouteImport
