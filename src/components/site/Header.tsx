@@ -25,7 +25,7 @@ const corporateItems = [
   { href: "/board-of-directors", label: "Board of Directors" },
   { href: "/key-management-personnel", label: "Key Management Personnel" },
   { href: "/compliance-officer", label: "Compliance Officer" },
-  { href: "#", label: "Policies" },
+  { href: "/policies", label: "Policies" },
   { href: "#", label: "AGM Notices" },
   { href: "#", label: "Board Meetings Notices" },
   { href: "#", label: "Financial Results" },

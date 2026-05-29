@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ScrutinizersReportRouteImport } from './routes/scrutinizers-report'
+import { Route as PoliciesRouteImport } from './routes/policies'
 import { Route as KeyManagementPersonnelRouteImport } from './routes/key-management-personnel'
 import { Route as ComplianceOfficerRouteImport } from './routes/compliance-officer'
 import { Route as BoardOfDirectorsRouteImport } from './routes/board-of-directors'
@@ -18,6 +19,11 @@ import { Route as IndexRouteImport } from './routes/index'
 const ScrutinizersReportRoute = ScrutinizersReportRouteImport.update({
   id: '/scrutinizers-report',
   path: '/scrutinizers-report',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PoliciesRoute = PoliciesRouteImport.update({
+  id: '/policies',
+  path: '/policies',
   getParentRoute: () => rootRouteImport,
 } as any)
 const KeyManagementPersonnelRoute = KeyManagementPersonnelRouteImport.update({
@@ -46,6 +52,7 @@ export interface FileRoutesByFullPath {
   '/board-of-directors': typeof BoardOfDirectorsRoute
   '/compliance-officer': typeof ComplianceOfficerRoute
   '/key-management-personnel': typeof KeyManagementPersonnelRoute
+  '/policies': typeof PoliciesRoute
   '/scrutinizers-report': typeof ScrutinizersReportRoute
 }
 export interface FileRoutesByTo {
@@ -53,6 +60,7 @@ export interface FileRoutesByTo {
   '/board-of-directors': typeof BoardOfDirectorsRoute
   '/compliance-officer': typeof ComplianceOfficerRoute
   '/key-management-personnel': typeof KeyManagementPersonnelRoute
+  '/policies': typeof PoliciesRoute
   '/scrutinizers-report': typeof ScrutinizersReportRoute
 }
 export interface FileRoutesById {
@@ -61,6 +69,7 @@ export interface FileRoutesById {
   '/board-of-directors': typeof BoardOfDirectorsRoute
   '/compliance-officer': typeof ComplianceOfficerRoute
   '/key-management-personnel': typeof KeyManagementPersonnelRoute
+  '/policies': typeof PoliciesRoute
   '/scrutinizers-report': typeof ScrutinizersReportRoute
 }
 export interface FileRouteTypes {
@@ -70,6 +79,7 @@ export interface FileRouteTypes {
     | '/board-of-directors'
     | '/compliance-officer'
     | '/key-management-personnel'
+    | '/policies'
     | '/scrutinizers-report'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -77,6 +87,7 @@ export interface FileRouteTypes {
     | '/board-of-directors'
     | '/compliance-officer'
     | '/key-management-personnel'
+    | '/policies'
     | '/scrutinizers-report'
   id:
     | '__root__'
@@ -84,6 +95,7 @@ export interface FileRouteTypes {
     | '/board-of-directors'
     | '/compliance-officer'
     | '/key-management-personnel'
+    | '/policies'
     | '/scrutinizers-report'
   fileRoutesById: FileRoutesById
 }
@@ -92,6 +104,7 @@ export interface RootRouteChildren {
   BoardOfDirectorsRoute: typeof BoardOfDirectorsRoute
   ComplianceOfficerRoute: typeof ComplianceOfficerRoute
   KeyManagementPersonnelRoute: typeof KeyManagementPersonnelRoute
+  PoliciesRoute: typeof PoliciesRoute
   ScrutinizersReportRoute: typeof ScrutinizersReportRoute
 }
 
@@ -102,6 +115,13 @@ declare module '@tanstack/react-router' {
       path: '/scrutinizers-report'
       fullPath: '/scrutinizers-report'
       preLoaderRoute: typeof ScrutinizersReportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/policies': {
+      id: '/policies'
+      path: '/policies'
+      fullPath: '/policies'
+      preLoaderRoute: typeof PoliciesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/key-management-personnel': {
@@ -140,6 +160,7 @@ const rootRouteChildren: RootRouteChildren = {
   BoardOfDirectorsRoute: BoardOfDirectorsRoute,
   ComplianceOfficerRoute: ComplianceOfficerRoute,
   KeyManagementPersonnelRoute: KeyManagementPersonnelRoute,
+  PoliciesRoute: PoliciesRoute,
   ScrutinizersReportRoute: ScrutinizersReportRoute,
 }
 export const routeTree = rootRouteImport
