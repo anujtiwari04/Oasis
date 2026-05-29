@@ -10,12 +10,24 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ScrutinizersReportRouteImport } from './routes/scrutinizers-report'
+import { Route as KeyManagementPersonnelRouteImport } from './routes/key-management-personnel'
+import { Route as ComplianceOfficerRouteImport } from './routes/compliance-officer'
 import { Route as BoardOfDirectorsRouteImport } from './routes/board-of-directors'
 import { Route as IndexRouteImport } from './routes/index'
 
 const ScrutinizersReportRoute = ScrutinizersReportRouteImport.update({
   id: '/scrutinizers-report',
   path: '/scrutinizers-report',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KeyManagementPersonnelRoute = KeyManagementPersonnelRouteImport.update({
+  id: '/key-management-personnel',
+  path: '/key-management-personnel',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ComplianceOfficerRoute = ComplianceOfficerRouteImport.update({
+  id: '/compliance-officer',
+  path: '/compliance-officer',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BoardOfDirectorsRoute = BoardOfDirectorsRouteImport.update({
@@ -32,30 +44,54 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/board-of-directors': typeof BoardOfDirectorsRoute
+  '/compliance-officer': typeof ComplianceOfficerRoute
+  '/key-management-personnel': typeof KeyManagementPersonnelRoute
   '/scrutinizers-report': typeof ScrutinizersReportRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/board-of-directors': typeof BoardOfDirectorsRoute
+  '/compliance-officer': typeof ComplianceOfficerRoute
+  '/key-management-personnel': typeof KeyManagementPersonnelRoute
   '/scrutinizers-report': typeof ScrutinizersReportRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/board-of-directors': typeof BoardOfDirectorsRoute
+  '/compliance-officer': typeof ComplianceOfficerRoute
+  '/key-management-personnel': typeof KeyManagementPersonnelRoute
   '/scrutinizers-report': typeof ScrutinizersReportRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/board-of-directors' | '/scrutinizers-report'
+  fullPaths:
+    | '/'
+    | '/board-of-directors'
+    | '/compliance-officer'
+    | '/key-management-personnel'
+    | '/scrutinizers-report'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/board-of-directors' | '/scrutinizers-report'
-  id: '__root__' | '/' | '/board-of-directors' | '/scrutinizers-report'
+  to:
+    | '/'
+    | '/board-of-directors'
+    | '/compliance-officer'
+    | '/key-management-personnel'
+    | '/scrutinizers-report'
+  id:
+    | '__root__'
+    | '/'
+    | '/board-of-directors'
+    | '/compliance-officer'
+    | '/key-management-personnel'
+    | '/scrutinizers-report'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   BoardOfDirectorsRoute: typeof BoardOfDirectorsRoute
+  ComplianceOfficerRoute: typeof ComplianceOfficerRoute
+  KeyManagementPersonnelRoute: typeof KeyManagementPersonnelRoute
   ScrutinizersReportRoute: typeof ScrutinizersReportRoute
 }
 
@@ -66,6 +102,20 @@ declare module '@tanstack/react-router' {
       path: '/scrutinizers-report'
       fullPath: '/scrutinizers-report'
       preLoaderRoute: typeof ScrutinizersReportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/key-management-personnel': {
+      id: '/key-management-personnel'
+      path: '/key-management-personnel'
+      fullPath: '/key-management-personnel'
+      preLoaderRoute: typeof KeyManagementPersonnelRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/compliance-officer': {
+      id: '/compliance-officer'
+      path: '/compliance-officer'
+      fullPath: '/compliance-officer'
+      preLoaderRoute: typeof ComplianceOfficerRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/board-of-directors': {
@@ -88,6 +138,8 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BoardOfDirectorsRoute: BoardOfDirectorsRoute,
+  ComplianceOfficerRoute: ComplianceOfficerRoute,
+  KeyManagementPersonnelRoute: KeyManagementPersonnelRoute,
   ScrutinizersReportRoute: ScrutinizersReportRoute,
 }
 export const routeTree = rootRouteImport
