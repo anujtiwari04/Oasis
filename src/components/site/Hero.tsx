@@ -53,7 +53,7 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="mt-6 text-lg sm:text-xl font-light text-slate-600 max-w-2xl mx-auto"
         >
-          Oasis Securities Limited — A registered Non-Banking Financial Company (NBFC) committed to
+          Oasis Securities Limited, A registered Non-Banking Financial Company (NBFC) committed to
           delivering trusted, institutional-grade financial services.
         </motion.p>
 

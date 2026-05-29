@@ -72,7 +72,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Oasis Securities Limited - Empowering Financial Growth" },
+      { title: "Oasis Securities Limited" },
       { name: "description", content: "Oasis Securities Limited is a registered NBFC offering Mutual Fund Distribution, IPO Activities, Life Insurance and Retail Loans." },
       { property: "og:title", content: "Oasis Securities Limited" },
       { property: "og:description", content: "A registered Non-Banking Financial Company (NBFC) empowering financial growth." },
