@@ -9,15 +9,22 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ShareTransferAgentRouteImport } from './routes/share-transfer-agent'
 import { Route as ScrutinizersReportRouteImport } from './routes/scrutinizers-report'
 import { Route as PoliciesRouteImport } from './routes/policies'
 import { Route as KeyManagementPersonnelRouteImport } from './routes/key-management-personnel'
+import { Route as FinancialResultsRouteImport } from './routes/financial-results'
 import { Route as ComplianceOfficerRouteImport } from './routes/compliance-officer'
 import { Route as BoardOfDirectorsRouteImport } from './routes/board-of-directors'
 import { Route as BoardMeetingsNoticesRouteImport } from './routes/board-meetings-notices'
 import { Route as AgmNoticesRouteImport } from './routes/agm-notices'
 import { Route as IndexRouteImport } from './routes/index'
 
+const ShareTransferAgentRoute = ShareTransferAgentRouteImport.update({
+  id: '/share-transfer-agent',
+  path: '/share-transfer-agent',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ScrutinizersReportRoute = ScrutinizersReportRouteImport.update({
   id: '/scrutinizers-report',
   path: '/scrutinizers-report',
@@ -31,6 +38,11 @@ const PoliciesRoute = PoliciesRouteImport.update({
 const KeyManagementPersonnelRoute = KeyManagementPersonnelRouteImport.update({
   id: '/key-management-personnel',
   path: '/key-management-personnel',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FinancialResultsRoute = FinancialResultsRouteImport.update({
+  id: '/financial-results',
+  path: '/financial-results',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ComplianceOfficerRoute = ComplianceOfficerRouteImport.update({
@@ -65,9 +77,11 @@ export interface FileRoutesByFullPath {
   '/board-meetings-notices': typeof BoardMeetingsNoticesRoute
   '/board-of-directors': typeof BoardOfDirectorsRoute
   '/compliance-officer': typeof ComplianceOfficerRoute
+  '/financial-results': typeof FinancialResultsRoute
   '/key-management-personnel': typeof KeyManagementPersonnelRoute
   '/policies': typeof PoliciesRoute
   '/scrutinizers-report': typeof ScrutinizersReportRoute
+  '/share-transfer-agent': typeof ShareTransferAgentRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -75,9 +89,11 @@ export interface FileRoutesByTo {
   '/board-meetings-notices': typeof BoardMeetingsNoticesRoute
   '/board-of-directors': typeof BoardOfDirectorsRoute
   '/compliance-officer': typeof ComplianceOfficerRoute
+  '/financial-results': typeof FinancialResultsRoute
   '/key-management-personnel': typeof KeyManagementPersonnelRoute
   '/policies': typeof PoliciesRoute
   '/scrutinizers-report': typeof ScrutinizersReportRoute
+  '/share-transfer-agent': typeof ShareTransferAgentRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -86,9 +102,11 @@ export interface FileRoutesById {
   '/board-meetings-notices': typeof BoardMeetingsNoticesRoute
   '/board-of-directors': typeof BoardOfDirectorsRoute
   '/compliance-officer': typeof ComplianceOfficerRoute
+  '/financial-results': typeof FinancialResultsRoute
   '/key-management-personnel': typeof KeyManagementPersonnelRoute
   '/policies': typeof PoliciesRoute
   '/scrutinizers-report': typeof ScrutinizersReportRoute
+  '/share-transfer-agent': typeof ShareTransferAgentRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -98,9 +116,11 @@ export interface FileRouteTypes {
     | '/board-meetings-notices'
     | '/board-of-directors'
     | '/compliance-officer'
+    | '/financial-results'
     | '/key-management-personnel'
     | '/policies'
     | '/scrutinizers-report'
+    | '/share-transfer-agent'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -108,9 +128,11 @@ export interface FileRouteTypes {
     | '/board-meetings-notices'
     | '/board-of-directors'
     | '/compliance-officer'
+    | '/financial-results'
     | '/key-management-personnel'
     | '/policies'
     | '/scrutinizers-report'
+    | '/share-transfer-agent'
   id:
     | '__root__'
     | '/'
@@ -118,9 +140,11 @@ export interface FileRouteTypes {
     | '/board-meetings-notices'
     | '/board-of-directors'
     | '/compliance-officer'
+    | '/financial-results'
     | '/key-management-personnel'
     | '/policies'
     | '/scrutinizers-report'
+    | '/share-transfer-agent'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -129,13 +153,22 @@ export interface RootRouteChildren {
   BoardMeetingsNoticesRoute: typeof BoardMeetingsNoticesRoute
   BoardOfDirectorsRoute: typeof BoardOfDirectorsRoute
   ComplianceOfficerRoute: typeof ComplianceOfficerRoute
+  FinancialResultsRoute: typeof FinancialResultsRoute
   KeyManagementPersonnelRoute: typeof KeyManagementPersonnelRoute
   PoliciesRoute: typeof PoliciesRoute
   ScrutinizersReportRoute: typeof ScrutinizersReportRoute
+  ShareTransferAgentRoute: typeof ShareTransferAgentRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/share-transfer-agent': {
+      id: '/share-transfer-agent'
+      path: '/share-transfer-agent'
+      fullPath: '/share-transfer-agent'
+      preLoaderRoute: typeof ShareTransferAgentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/scrutinizers-report': {
       id: '/scrutinizers-report'
       path: '/scrutinizers-report'
@@ -155,6 +188,13 @@ declare module '@tanstack/react-router' {
       path: '/key-management-personnel'
       fullPath: '/key-management-personnel'
       preLoaderRoute: typeof KeyManagementPersonnelRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/financial-results': {
+      id: '/financial-results'
+      path: '/financial-results'
+      fullPath: '/financial-results'
+      preLoaderRoute: typeof FinancialResultsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/compliance-officer': {
@@ -201,9 +241,11 @@ const rootRouteChildren: RootRouteChildren = {
   BoardMeetingsNoticesRoute: BoardMeetingsNoticesRoute,
   BoardOfDirectorsRoute: BoardOfDirectorsRoute,
   ComplianceOfficerRoute: ComplianceOfficerRoute,
+  FinancialResultsRoute: FinancialResultsRoute,
   KeyManagementPersonnelRoute: KeyManagementPersonnelRoute,
   PoliciesRoute: PoliciesRoute,
   ScrutinizersReportRoute: ScrutinizersReportRoute,
+  ShareTransferAgentRoute: ShareTransferAgentRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
