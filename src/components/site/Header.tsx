@@ -27,7 +27,7 @@ const corporateItems = [
   { href: "/compliance-officer", label: "Compliance Officer" },
   { href: "/policies", label: "Policies" },
   { href: "/agm-notices", label: "AGM Notices" },
-  { href: "#", label: "Board Meetings Notices" },
+  { href: "/board-meetings-notices", label: "Board Meetings Notices" },
   { href: "#", label: "Financial Results" },
   { href: "#", label: "Shareholding pattern" },
   { href: "#", label: "Share Transfer Agent (RTA)" },

@@ -14,6 +14,7 @@ import { Route as PoliciesRouteImport } from './routes/policies'
 import { Route as KeyManagementPersonnelRouteImport } from './routes/key-management-personnel'
 import { Route as ComplianceOfficerRouteImport } from './routes/compliance-officer'
 import { Route as BoardOfDirectorsRouteImport } from './routes/board-of-directors'
+import { Route as BoardMeetingsNoticesRouteImport } from './routes/board-meetings-notices'
 import { Route as AgmNoticesRouteImport } from './routes/agm-notices'
 import { Route as IndexRouteImport } from './routes/index'
 
@@ -42,6 +43,11 @@ const BoardOfDirectorsRoute = BoardOfDirectorsRouteImport.update({
   path: '/board-of-directors',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BoardMeetingsNoticesRoute = BoardMeetingsNoticesRouteImport.update({
+  id: '/board-meetings-notices',
+  path: '/board-meetings-notices',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AgmNoticesRoute = AgmNoticesRouteImport.update({
   id: '/agm-notices',
   path: '/agm-notices',
@@ -56,6 +62,7 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/agm-notices': typeof AgmNoticesRoute
+  '/board-meetings-notices': typeof BoardMeetingsNoticesRoute
   '/board-of-directors': typeof BoardOfDirectorsRoute
   '/compliance-officer': typeof ComplianceOfficerRoute
   '/key-management-personnel': typeof KeyManagementPersonnelRoute
@@ -65,6 +72,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/agm-notices': typeof AgmNoticesRoute
+  '/board-meetings-notices': typeof BoardMeetingsNoticesRoute
   '/board-of-directors': typeof BoardOfDirectorsRoute
   '/compliance-officer': typeof ComplianceOfficerRoute
   '/key-management-personnel': typeof KeyManagementPersonnelRoute
@@ -75,6 +83,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/agm-notices': typeof AgmNoticesRoute
+  '/board-meetings-notices': typeof BoardMeetingsNoticesRoute
   '/board-of-directors': typeof BoardOfDirectorsRoute
   '/compliance-officer': typeof ComplianceOfficerRoute
   '/key-management-personnel': typeof KeyManagementPersonnelRoute
@@ -86,6 +95,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/agm-notices'
+    | '/board-meetings-notices'
     | '/board-of-directors'
     | '/compliance-officer'
     | '/key-management-personnel'
@@ -95,6 +105,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/agm-notices'
+    | '/board-meetings-notices'
     | '/board-of-directors'
     | '/compliance-officer'
     | '/key-management-personnel'
@@ -104,6 +115,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/agm-notices'
+    | '/board-meetings-notices'
     | '/board-of-directors'
     | '/compliance-officer'
     | '/key-management-personnel'
@@ -114,6 +126,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AgmNoticesRoute: typeof AgmNoticesRoute
+  BoardMeetingsNoticesRoute: typeof BoardMeetingsNoticesRoute
   BoardOfDirectorsRoute: typeof BoardOfDirectorsRoute
   ComplianceOfficerRoute: typeof ComplianceOfficerRoute
   KeyManagementPersonnelRoute: typeof KeyManagementPersonnelRoute
@@ -158,6 +171,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BoardOfDirectorsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/board-meetings-notices': {
+      id: '/board-meetings-notices'
+      path: '/board-meetings-notices'
+      fullPath: '/board-meetings-notices'
+      preLoaderRoute: typeof BoardMeetingsNoticesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/agm-notices': {
       id: '/agm-notices'
       path: '/agm-notices'
@@ -178,6 +198,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AgmNoticesRoute: AgmNoticesRoute,
+  BoardMeetingsNoticesRoute: BoardMeetingsNoticesRoute,
   BoardOfDirectorsRoute: BoardOfDirectorsRoute,
   ComplianceOfficerRoute: ComplianceOfficerRoute,
   KeyManagementPersonnelRoute: KeyManagementPersonnelRoute,
