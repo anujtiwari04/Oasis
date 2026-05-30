@@ -14,6 +14,7 @@ import { Route as PoliciesRouteImport } from './routes/policies'
 import { Route as KeyManagementPersonnelRouteImport } from './routes/key-management-personnel'
 import { Route as ComplianceOfficerRouteImport } from './routes/compliance-officer'
 import { Route as BoardOfDirectorsRouteImport } from './routes/board-of-directors'
+import { Route as AgmNoticesRouteImport } from './routes/agm-notices'
 import { Route as IndexRouteImport } from './routes/index'
 
 const ScrutinizersReportRoute = ScrutinizersReportRouteImport.update({
@@ -41,6 +42,11 @@ const BoardOfDirectorsRoute = BoardOfDirectorsRouteImport.update({
   path: '/board-of-directors',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AgmNoticesRoute = AgmNoticesRouteImport.update({
+  id: '/agm-notices',
+  path: '/agm-notices',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -49,6 +55,7 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/agm-notices': typeof AgmNoticesRoute
   '/board-of-directors': typeof BoardOfDirectorsRoute
   '/compliance-officer': typeof ComplianceOfficerRoute
   '/key-management-personnel': typeof KeyManagementPersonnelRoute
@@ -57,6 +64,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/agm-notices': typeof AgmNoticesRoute
   '/board-of-directors': typeof BoardOfDirectorsRoute
   '/compliance-officer': typeof ComplianceOfficerRoute
   '/key-management-personnel': typeof KeyManagementPersonnelRoute
@@ -66,6 +74,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/agm-notices': typeof AgmNoticesRoute
   '/board-of-directors': typeof BoardOfDirectorsRoute
   '/compliance-officer': typeof ComplianceOfficerRoute
   '/key-management-personnel': typeof KeyManagementPersonnelRoute
@@ -76,6 +85,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/agm-notices'
     | '/board-of-directors'
     | '/compliance-officer'
     | '/key-management-personnel'
@@ -84,6 +94,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/agm-notices'
     | '/board-of-directors'
     | '/compliance-officer'
     | '/key-management-personnel'
@@ -92,6 +103,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/agm-notices'
     | '/board-of-directors'
     | '/compliance-officer'
     | '/key-management-personnel'
@@ -101,6 +113,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AgmNoticesRoute: typeof AgmNoticesRoute
   BoardOfDirectorsRoute: typeof BoardOfDirectorsRoute
   ComplianceOfficerRoute: typeof ComplianceOfficerRoute
   KeyManagementPersonnelRoute: typeof KeyManagementPersonnelRoute
@@ -145,6 +158,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BoardOfDirectorsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/agm-notices': {
+      id: '/agm-notices'
+      path: '/agm-notices'
+      fullPath: '/agm-notices'
+      preLoaderRoute: typeof AgmNoticesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -157,6 +177,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AgmNoticesRoute: AgmNoticesRoute,
   BoardOfDirectorsRoute: BoardOfDirectorsRoute,
   ComplianceOfficerRoute: ComplianceOfficerRoute,
   KeyManagementPersonnelRoute: KeyManagementPersonnelRoute,
