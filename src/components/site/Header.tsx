@@ -53,7 +53,14 @@ const openOffers2023Items = [
   { href: openOfferLOF, label: "LOF-OasisSecurities Limited", download: "LOF - Oasis Securities Limited 30.05.2024.pdf" },
 ];
 
-const navLinks = [
+interface NavItem {
+  href: string;
+  label: string;
+  download?: string;
+  children?: NavItem[];
+}
+
+const navLinks: NavItem[] = [
   { href: "/", label: "Home" },
   { href: "/#about", label: "About" },
   { href: "/#corporate", label: "Corporate", children: corporateItems },

@@ -10,6 +10,26 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ShareholdingPatternSept2016RouteImport } from './routes/shareholding-pattern-sept-2016'
+import { Route as ShareholdingPatternSep2025RouteImport } from './routes/shareholding-pattern-sep-2025'
+import { Route as ShareholdingPatternSep2023RouteImport } from './routes/shareholding-pattern-sep-2023'
+import { Route as ShareholdingPatternSep2022RouteImport } from './routes/shareholding-pattern-sep-2022'
+import { Route as ShareholdingPatternSep2021RouteImport } from './routes/shareholding-pattern-sep-2021'
+import { Route as ShareholdingPatternSep2020RouteImport } from './routes/shareholding-pattern-sep-2020'
+import { Route as ShareholdingPatternMarch2017RouteImport } from './routes/shareholding-pattern-march-2017'
+import { Route as ShareholdingPatternMar2025RouteImport } from './routes/shareholding-pattern-mar-2025'
+import { Route as ShareholdingPatternMar2023RouteImport } from './routes/shareholding-pattern-mar-2023'
+import { Route as ShareholdingPatternMar2022RouteImport } from './routes/shareholding-pattern-mar-2022'
+import { Route as ShareholdingPatternMar2021RouteImport } from './routes/shareholding-pattern-mar-2021'
+import { Route as ShareholdingPatternJune2025RouteImport } from './routes/shareholding-pattern-june-2025'
+import { Route as ShareholdingPatternJune2024RouteImport } from './routes/shareholding-pattern-june-2024'
+import { Route as ShareholdingPatternJune2023RouteImport } from './routes/shareholding-pattern-june-2023'
+import { Route as ShareholdingPatternJune2021RouteImport } from './routes/shareholding-pattern-june-2021'
+import { Route as ShareholdingPatternDec2025RouteImport } from './routes/shareholding-pattern-dec-2025'
+import { Route as ShareholdingPatternDec2024RouteImport } from './routes/shareholding-pattern-dec-2024'
+import { Route as ShareholdingPatternDec2022RouteImport } from './routes/shareholding-pattern-dec-2022'
+import { Route as ShareholdingPatternDec2021RouteImport } from './routes/shareholding-pattern-dec-2021'
+import { Route as ShareholdingPatternDec2020RouteImport } from './routes/shareholding-pattern-dec-2020'
+import { Route as ShareholdingPatternDec2016RouteImport } from './routes/shareholding-pattern-dec-2016'
 import { Route as ShareholdingPatternRouteImport } from './routes/shareholding-pattern'
 import { Route as ShareTransferAgentRouteImport } from './routes/share-transfer-agent'
 import { Route as ScrutinizersReportRouteImport } from './routes/scrutinizers-report'
@@ -31,6 +51,126 @@ const ShareholdingPatternSept2016Route =
   ShareholdingPatternSept2016RouteImport.update({
     id: '/shareholding-pattern-sept-2016',
     path: '/shareholding-pattern-sept-2016',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ShareholdingPatternSep2025Route =
+  ShareholdingPatternSep2025RouteImport.update({
+    id: '/shareholding-pattern-sep-2025',
+    path: '/shareholding-pattern-sep-2025',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ShareholdingPatternSep2023Route =
+  ShareholdingPatternSep2023RouteImport.update({
+    id: '/shareholding-pattern-sep-2023',
+    path: '/shareholding-pattern-sep-2023',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ShareholdingPatternSep2022Route =
+  ShareholdingPatternSep2022RouteImport.update({
+    id: '/shareholding-pattern-sep-2022',
+    path: '/shareholding-pattern-sep-2022',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ShareholdingPatternSep2021Route =
+  ShareholdingPatternSep2021RouteImport.update({
+    id: '/shareholding-pattern-sep-2021',
+    path: '/shareholding-pattern-sep-2021',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ShareholdingPatternSep2020Route =
+  ShareholdingPatternSep2020RouteImport.update({
+    id: '/shareholding-pattern-sep-2020',
+    path: '/shareholding-pattern-sep-2020',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ShareholdingPatternMarch2017Route =
+  ShareholdingPatternMarch2017RouteImport.update({
+    id: '/shareholding-pattern-march-2017',
+    path: '/shareholding-pattern-march-2017',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ShareholdingPatternMar2025Route =
+  ShareholdingPatternMar2025RouteImport.update({
+    id: '/shareholding-pattern-mar-2025',
+    path: '/shareholding-pattern-mar-2025',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ShareholdingPatternMar2023Route =
+  ShareholdingPatternMar2023RouteImport.update({
+    id: '/shareholding-pattern-mar-2023',
+    path: '/shareholding-pattern-mar-2023',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ShareholdingPatternMar2022Route =
+  ShareholdingPatternMar2022RouteImport.update({
+    id: '/shareholding-pattern-mar-2022',
+    path: '/shareholding-pattern-mar-2022',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ShareholdingPatternMar2021Route =
+  ShareholdingPatternMar2021RouteImport.update({
+    id: '/shareholding-pattern-mar-2021',
+    path: '/shareholding-pattern-mar-2021',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ShareholdingPatternJune2025Route =
+  ShareholdingPatternJune2025RouteImport.update({
+    id: '/shareholding-pattern-june-2025',
+    path: '/shareholding-pattern-june-2025',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ShareholdingPatternJune2024Route =
+  ShareholdingPatternJune2024RouteImport.update({
+    id: '/shareholding-pattern-june-2024',
+    path: '/shareholding-pattern-june-2024',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ShareholdingPatternJune2023Route =
+  ShareholdingPatternJune2023RouteImport.update({
+    id: '/shareholding-pattern-june-2023',
+    path: '/shareholding-pattern-june-2023',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ShareholdingPatternJune2021Route =
+  ShareholdingPatternJune2021RouteImport.update({
+    id: '/shareholding-pattern-june-2021',
+    path: '/shareholding-pattern-june-2021',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ShareholdingPatternDec2025Route =
+  ShareholdingPatternDec2025RouteImport.update({
+    id: '/shareholding-pattern-dec-2025',
+    path: '/shareholding-pattern-dec-2025',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ShareholdingPatternDec2024Route =
+  ShareholdingPatternDec2024RouteImport.update({
+    id: '/shareholding-pattern-dec-2024',
+    path: '/shareholding-pattern-dec-2024',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ShareholdingPatternDec2022Route =
+  ShareholdingPatternDec2022RouteImport.update({
+    id: '/shareholding-pattern-dec-2022',
+    path: '/shareholding-pattern-dec-2022',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ShareholdingPatternDec2021Route =
+  ShareholdingPatternDec2021RouteImport.update({
+    id: '/shareholding-pattern-dec-2021',
+    path: '/shareholding-pattern-dec-2021',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ShareholdingPatternDec2020Route =
+  ShareholdingPatternDec2020RouteImport.update({
+    id: '/shareholding-pattern-dec-2020',
+    path: '/shareholding-pattern-dec-2020',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ShareholdingPatternDec2016Route =
+  ShareholdingPatternDec2016RouteImport.update({
+    id: '/shareholding-pattern-dec-2016',
+    path: '/shareholding-pattern-dec-2016',
     getParentRoute: () => rootRouteImport,
   } as any)
 const ShareholdingPatternRoute = ShareholdingPatternRouteImport.update({
@@ -131,6 +271,26 @@ export interface FileRoutesByFullPath {
   '/scrutinizers-report': typeof ScrutinizersReportRoute
   '/share-transfer-agent': typeof ShareTransferAgentRoute
   '/shareholding-pattern': typeof ShareholdingPatternRoute
+  '/shareholding-pattern-dec-2016': typeof ShareholdingPatternDec2016Route
+  '/shareholding-pattern-dec-2020': typeof ShareholdingPatternDec2020Route
+  '/shareholding-pattern-dec-2021': typeof ShareholdingPatternDec2021Route
+  '/shareholding-pattern-dec-2022': typeof ShareholdingPatternDec2022Route
+  '/shareholding-pattern-dec-2024': typeof ShareholdingPatternDec2024Route
+  '/shareholding-pattern-dec-2025': typeof ShareholdingPatternDec2025Route
+  '/shareholding-pattern-june-2021': typeof ShareholdingPatternJune2021Route
+  '/shareholding-pattern-june-2023': typeof ShareholdingPatternJune2023Route
+  '/shareholding-pattern-june-2024': typeof ShareholdingPatternJune2024Route
+  '/shareholding-pattern-june-2025': typeof ShareholdingPatternJune2025Route
+  '/shareholding-pattern-mar-2021': typeof ShareholdingPatternMar2021Route
+  '/shareholding-pattern-mar-2022': typeof ShareholdingPatternMar2022Route
+  '/shareholding-pattern-mar-2023': typeof ShareholdingPatternMar2023Route
+  '/shareholding-pattern-mar-2025': typeof ShareholdingPatternMar2025Route
+  '/shareholding-pattern-march-2017': typeof ShareholdingPatternMarch2017Route
+  '/shareholding-pattern-sep-2020': typeof ShareholdingPatternSep2020Route
+  '/shareholding-pattern-sep-2021': typeof ShareholdingPatternSep2021Route
+  '/shareholding-pattern-sep-2022': typeof ShareholdingPatternSep2022Route
+  '/shareholding-pattern-sep-2023': typeof ShareholdingPatternSep2023Route
+  '/shareholding-pattern-sep-2025': typeof ShareholdingPatternSep2025Route
   '/shareholding-pattern-sept-2016': typeof ShareholdingPatternSept2016Route
 }
 export interface FileRoutesByTo {
@@ -150,6 +310,26 @@ export interface FileRoutesByTo {
   '/scrutinizers-report': typeof ScrutinizersReportRoute
   '/share-transfer-agent': typeof ShareTransferAgentRoute
   '/shareholding-pattern': typeof ShareholdingPatternRoute
+  '/shareholding-pattern-dec-2016': typeof ShareholdingPatternDec2016Route
+  '/shareholding-pattern-dec-2020': typeof ShareholdingPatternDec2020Route
+  '/shareholding-pattern-dec-2021': typeof ShareholdingPatternDec2021Route
+  '/shareholding-pattern-dec-2022': typeof ShareholdingPatternDec2022Route
+  '/shareholding-pattern-dec-2024': typeof ShareholdingPatternDec2024Route
+  '/shareholding-pattern-dec-2025': typeof ShareholdingPatternDec2025Route
+  '/shareholding-pattern-june-2021': typeof ShareholdingPatternJune2021Route
+  '/shareholding-pattern-june-2023': typeof ShareholdingPatternJune2023Route
+  '/shareholding-pattern-june-2024': typeof ShareholdingPatternJune2024Route
+  '/shareholding-pattern-june-2025': typeof ShareholdingPatternJune2025Route
+  '/shareholding-pattern-mar-2021': typeof ShareholdingPatternMar2021Route
+  '/shareholding-pattern-mar-2022': typeof ShareholdingPatternMar2022Route
+  '/shareholding-pattern-mar-2023': typeof ShareholdingPatternMar2023Route
+  '/shareholding-pattern-mar-2025': typeof ShareholdingPatternMar2025Route
+  '/shareholding-pattern-march-2017': typeof ShareholdingPatternMarch2017Route
+  '/shareholding-pattern-sep-2020': typeof ShareholdingPatternSep2020Route
+  '/shareholding-pattern-sep-2021': typeof ShareholdingPatternSep2021Route
+  '/shareholding-pattern-sep-2022': typeof ShareholdingPatternSep2022Route
+  '/shareholding-pattern-sep-2023': typeof ShareholdingPatternSep2023Route
+  '/shareholding-pattern-sep-2025': typeof ShareholdingPatternSep2025Route
   '/shareholding-pattern-sept-2016': typeof ShareholdingPatternSept2016Route
 }
 export interface FileRoutesById {
@@ -170,6 +350,26 @@ export interface FileRoutesById {
   '/scrutinizers-report': typeof ScrutinizersReportRoute
   '/share-transfer-agent': typeof ShareTransferAgentRoute
   '/shareholding-pattern': typeof ShareholdingPatternRoute
+  '/shareholding-pattern-dec-2016': typeof ShareholdingPatternDec2016Route
+  '/shareholding-pattern-dec-2020': typeof ShareholdingPatternDec2020Route
+  '/shareholding-pattern-dec-2021': typeof ShareholdingPatternDec2021Route
+  '/shareholding-pattern-dec-2022': typeof ShareholdingPatternDec2022Route
+  '/shareholding-pattern-dec-2024': typeof ShareholdingPatternDec2024Route
+  '/shareholding-pattern-dec-2025': typeof ShareholdingPatternDec2025Route
+  '/shareholding-pattern-june-2021': typeof ShareholdingPatternJune2021Route
+  '/shareholding-pattern-june-2023': typeof ShareholdingPatternJune2023Route
+  '/shareholding-pattern-june-2024': typeof ShareholdingPatternJune2024Route
+  '/shareholding-pattern-june-2025': typeof ShareholdingPatternJune2025Route
+  '/shareholding-pattern-mar-2021': typeof ShareholdingPatternMar2021Route
+  '/shareholding-pattern-mar-2022': typeof ShareholdingPatternMar2022Route
+  '/shareholding-pattern-mar-2023': typeof ShareholdingPatternMar2023Route
+  '/shareholding-pattern-mar-2025': typeof ShareholdingPatternMar2025Route
+  '/shareholding-pattern-march-2017': typeof ShareholdingPatternMarch2017Route
+  '/shareholding-pattern-sep-2020': typeof ShareholdingPatternSep2020Route
+  '/shareholding-pattern-sep-2021': typeof ShareholdingPatternSep2021Route
+  '/shareholding-pattern-sep-2022': typeof ShareholdingPatternSep2022Route
+  '/shareholding-pattern-sep-2023': typeof ShareholdingPatternSep2023Route
+  '/shareholding-pattern-sep-2025': typeof ShareholdingPatternSep2025Route
   '/shareholding-pattern-sept-2016': typeof ShareholdingPatternSept2016Route
 }
 export interface FileRouteTypes {
@@ -191,6 +391,26 @@ export interface FileRouteTypes {
     | '/scrutinizers-report'
     | '/share-transfer-agent'
     | '/shareholding-pattern'
+    | '/shareholding-pattern-dec-2016'
+    | '/shareholding-pattern-dec-2020'
+    | '/shareholding-pattern-dec-2021'
+    | '/shareholding-pattern-dec-2022'
+    | '/shareholding-pattern-dec-2024'
+    | '/shareholding-pattern-dec-2025'
+    | '/shareholding-pattern-june-2021'
+    | '/shareholding-pattern-june-2023'
+    | '/shareholding-pattern-june-2024'
+    | '/shareholding-pattern-june-2025'
+    | '/shareholding-pattern-mar-2021'
+    | '/shareholding-pattern-mar-2022'
+    | '/shareholding-pattern-mar-2023'
+    | '/shareholding-pattern-mar-2025'
+    | '/shareholding-pattern-march-2017'
+    | '/shareholding-pattern-sep-2020'
+    | '/shareholding-pattern-sep-2021'
+    | '/shareholding-pattern-sep-2022'
+    | '/shareholding-pattern-sep-2023'
+    | '/shareholding-pattern-sep-2025'
     | '/shareholding-pattern-sept-2016'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -210,6 +430,26 @@ export interface FileRouteTypes {
     | '/scrutinizers-report'
     | '/share-transfer-agent'
     | '/shareholding-pattern'
+    | '/shareholding-pattern-dec-2016'
+    | '/shareholding-pattern-dec-2020'
+    | '/shareholding-pattern-dec-2021'
+    | '/shareholding-pattern-dec-2022'
+    | '/shareholding-pattern-dec-2024'
+    | '/shareholding-pattern-dec-2025'
+    | '/shareholding-pattern-june-2021'
+    | '/shareholding-pattern-june-2023'
+    | '/shareholding-pattern-june-2024'
+    | '/shareholding-pattern-june-2025'
+    | '/shareholding-pattern-mar-2021'
+    | '/shareholding-pattern-mar-2022'
+    | '/shareholding-pattern-mar-2023'
+    | '/shareholding-pattern-mar-2025'
+    | '/shareholding-pattern-march-2017'
+    | '/shareholding-pattern-sep-2020'
+    | '/shareholding-pattern-sep-2021'
+    | '/shareholding-pattern-sep-2022'
+    | '/shareholding-pattern-sep-2023'
+    | '/shareholding-pattern-sep-2025'
     | '/shareholding-pattern-sept-2016'
   id:
     | '__root__'
@@ -229,6 +469,26 @@ export interface FileRouteTypes {
     | '/scrutinizers-report'
     | '/share-transfer-agent'
     | '/shareholding-pattern'
+    | '/shareholding-pattern-dec-2016'
+    | '/shareholding-pattern-dec-2020'
+    | '/shareholding-pattern-dec-2021'
+    | '/shareholding-pattern-dec-2022'
+    | '/shareholding-pattern-dec-2024'
+    | '/shareholding-pattern-dec-2025'
+    | '/shareholding-pattern-june-2021'
+    | '/shareholding-pattern-june-2023'
+    | '/shareholding-pattern-june-2024'
+    | '/shareholding-pattern-june-2025'
+    | '/shareholding-pattern-mar-2021'
+    | '/shareholding-pattern-mar-2022'
+    | '/shareholding-pattern-mar-2023'
+    | '/shareholding-pattern-mar-2025'
+    | '/shareholding-pattern-march-2017'
+    | '/shareholding-pattern-sep-2020'
+    | '/shareholding-pattern-sep-2021'
+    | '/shareholding-pattern-sep-2022'
+    | '/shareholding-pattern-sep-2023'
+    | '/shareholding-pattern-sep-2025'
     | '/shareholding-pattern-sept-2016'
   fileRoutesById: FileRoutesById
 }
@@ -249,6 +509,26 @@ export interface RootRouteChildren {
   ScrutinizersReportRoute: typeof ScrutinizersReportRoute
   ShareTransferAgentRoute: typeof ShareTransferAgentRoute
   ShareholdingPatternRoute: typeof ShareholdingPatternRoute
+  ShareholdingPatternDec2016Route: typeof ShareholdingPatternDec2016Route
+  ShareholdingPatternDec2020Route: typeof ShareholdingPatternDec2020Route
+  ShareholdingPatternDec2021Route: typeof ShareholdingPatternDec2021Route
+  ShareholdingPatternDec2022Route: typeof ShareholdingPatternDec2022Route
+  ShareholdingPatternDec2024Route: typeof ShareholdingPatternDec2024Route
+  ShareholdingPatternDec2025Route: typeof ShareholdingPatternDec2025Route
+  ShareholdingPatternJune2021Route: typeof ShareholdingPatternJune2021Route
+  ShareholdingPatternJune2023Route: typeof ShareholdingPatternJune2023Route
+  ShareholdingPatternJune2024Route: typeof ShareholdingPatternJune2024Route
+  ShareholdingPatternJune2025Route: typeof ShareholdingPatternJune2025Route
+  ShareholdingPatternMar2021Route: typeof ShareholdingPatternMar2021Route
+  ShareholdingPatternMar2022Route: typeof ShareholdingPatternMar2022Route
+  ShareholdingPatternMar2023Route: typeof ShareholdingPatternMar2023Route
+  ShareholdingPatternMar2025Route: typeof ShareholdingPatternMar2025Route
+  ShareholdingPatternMarch2017Route: typeof ShareholdingPatternMarch2017Route
+  ShareholdingPatternSep2020Route: typeof ShareholdingPatternSep2020Route
+  ShareholdingPatternSep2021Route: typeof ShareholdingPatternSep2021Route
+  ShareholdingPatternSep2022Route: typeof ShareholdingPatternSep2022Route
+  ShareholdingPatternSep2023Route: typeof ShareholdingPatternSep2023Route
+  ShareholdingPatternSep2025Route: typeof ShareholdingPatternSep2025Route
   ShareholdingPatternSept2016Route: typeof ShareholdingPatternSept2016Route
 }
 
@@ -259,6 +539,146 @@ declare module '@tanstack/react-router' {
       path: '/shareholding-pattern-sept-2016'
       fullPath: '/shareholding-pattern-sept-2016'
       preLoaderRoute: typeof ShareholdingPatternSept2016RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shareholding-pattern-sep-2025': {
+      id: '/shareholding-pattern-sep-2025'
+      path: '/shareholding-pattern-sep-2025'
+      fullPath: '/shareholding-pattern-sep-2025'
+      preLoaderRoute: typeof ShareholdingPatternSep2025RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shareholding-pattern-sep-2023': {
+      id: '/shareholding-pattern-sep-2023'
+      path: '/shareholding-pattern-sep-2023'
+      fullPath: '/shareholding-pattern-sep-2023'
+      preLoaderRoute: typeof ShareholdingPatternSep2023RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shareholding-pattern-sep-2022': {
+      id: '/shareholding-pattern-sep-2022'
+      path: '/shareholding-pattern-sep-2022'
+      fullPath: '/shareholding-pattern-sep-2022'
+      preLoaderRoute: typeof ShareholdingPatternSep2022RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shareholding-pattern-sep-2021': {
+      id: '/shareholding-pattern-sep-2021'
+      path: '/shareholding-pattern-sep-2021'
+      fullPath: '/shareholding-pattern-sep-2021'
+      preLoaderRoute: typeof ShareholdingPatternSep2021RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shareholding-pattern-sep-2020': {
+      id: '/shareholding-pattern-sep-2020'
+      path: '/shareholding-pattern-sep-2020'
+      fullPath: '/shareholding-pattern-sep-2020'
+      preLoaderRoute: typeof ShareholdingPatternSep2020RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shareholding-pattern-march-2017': {
+      id: '/shareholding-pattern-march-2017'
+      path: '/shareholding-pattern-march-2017'
+      fullPath: '/shareholding-pattern-march-2017'
+      preLoaderRoute: typeof ShareholdingPatternMarch2017RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shareholding-pattern-mar-2025': {
+      id: '/shareholding-pattern-mar-2025'
+      path: '/shareholding-pattern-mar-2025'
+      fullPath: '/shareholding-pattern-mar-2025'
+      preLoaderRoute: typeof ShareholdingPatternMar2025RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shareholding-pattern-mar-2023': {
+      id: '/shareholding-pattern-mar-2023'
+      path: '/shareholding-pattern-mar-2023'
+      fullPath: '/shareholding-pattern-mar-2023'
+      preLoaderRoute: typeof ShareholdingPatternMar2023RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shareholding-pattern-mar-2022': {
+      id: '/shareholding-pattern-mar-2022'
+      path: '/shareholding-pattern-mar-2022'
+      fullPath: '/shareholding-pattern-mar-2022'
+      preLoaderRoute: typeof ShareholdingPatternMar2022RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shareholding-pattern-mar-2021': {
+      id: '/shareholding-pattern-mar-2021'
+      path: '/shareholding-pattern-mar-2021'
+      fullPath: '/shareholding-pattern-mar-2021'
+      preLoaderRoute: typeof ShareholdingPatternMar2021RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shareholding-pattern-june-2025': {
+      id: '/shareholding-pattern-june-2025'
+      path: '/shareholding-pattern-june-2025'
+      fullPath: '/shareholding-pattern-june-2025'
+      preLoaderRoute: typeof ShareholdingPatternJune2025RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shareholding-pattern-june-2024': {
+      id: '/shareholding-pattern-june-2024'
+      path: '/shareholding-pattern-june-2024'
+      fullPath: '/shareholding-pattern-june-2024'
+      preLoaderRoute: typeof ShareholdingPatternJune2024RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shareholding-pattern-june-2023': {
+      id: '/shareholding-pattern-june-2023'
+      path: '/shareholding-pattern-june-2023'
+      fullPath: '/shareholding-pattern-june-2023'
+      preLoaderRoute: typeof ShareholdingPatternJune2023RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shareholding-pattern-june-2021': {
+      id: '/shareholding-pattern-june-2021'
+      path: '/shareholding-pattern-june-2021'
+      fullPath: '/shareholding-pattern-june-2021'
+      preLoaderRoute: typeof ShareholdingPatternJune2021RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shareholding-pattern-dec-2025': {
+      id: '/shareholding-pattern-dec-2025'
+      path: '/shareholding-pattern-dec-2025'
+      fullPath: '/shareholding-pattern-dec-2025'
+      preLoaderRoute: typeof ShareholdingPatternDec2025RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shareholding-pattern-dec-2024': {
+      id: '/shareholding-pattern-dec-2024'
+      path: '/shareholding-pattern-dec-2024'
+      fullPath: '/shareholding-pattern-dec-2024'
+      preLoaderRoute: typeof ShareholdingPatternDec2024RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shareholding-pattern-dec-2022': {
+      id: '/shareholding-pattern-dec-2022'
+      path: '/shareholding-pattern-dec-2022'
+      fullPath: '/shareholding-pattern-dec-2022'
+      preLoaderRoute: typeof ShareholdingPatternDec2022RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shareholding-pattern-dec-2021': {
+      id: '/shareholding-pattern-dec-2021'
+      path: '/shareholding-pattern-dec-2021'
+      fullPath: '/shareholding-pattern-dec-2021'
+      preLoaderRoute: typeof ShareholdingPatternDec2021RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shareholding-pattern-dec-2020': {
+      id: '/shareholding-pattern-dec-2020'
+      path: '/shareholding-pattern-dec-2020'
+      fullPath: '/shareholding-pattern-dec-2020'
+      preLoaderRoute: typeof ShareholdingPatternDec2020RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shareholding-pattern-dec-2016': {
+      id: '/shareholding-pattern-dec-2016'
+      path: '/shareholding-pattern-dec-2016'
+      fullPath: '/shareholding-pattern-dec-2016'
+      preLoaderRoute: typeof ShareholdingPatternDec2016RouteImport
       parentRoute: typeof rootRouteImport
     }
     '/shareholding-pattern': {
@@ -393,6 +813,26 @@ const rootRouteChildren: RootRouteChildren = {
   ScrutinizersReportRoute: ScrutinizersReportRoute,
   ShareTransferAgentRoute: ShareTransferAgentRoute,
   ShareholdingPatternRoute: ShareholdingPatternRoute,
+  ShareholdingPatternDec2016Route: ShareholdingPatternDec2016Route,
+  ShareholdingPatternDec2020Route: ShareholdingPatternDec2020Route,
+  ShareholdingPatternDec2021Route: ShareholdingPatternDec2021Route,
+  ShareholdingPatternDec2022Route: ShareholdingPatternDec2022Route,
+  ShareholdingPatternDec2024Route: ShareholdingPatternDec2024Route,
+  ShareholdingPatternDec2025Route: ShareholdingPatternDec2025Route,
+  ShareholdingPatternJune2021Route: ShareholdingPatternJune2021Route,
+  ShareholdingPatternJune2023Route: ShareholdingPatternJune2023Route,
+  ShareholdingPatternJune2024Route: ShareholdingPatternJune2024Route,
+  ShareholdingPatternJune2025Route: ShareholdingPatternJune2025Route,
+  ShareholdingPatternMar2021Route: ShareholdingPatternMar2021Route,
+  ShareholdingPatternMar2022Route: ShareholdingPatternMar2022Route,
+  ShareholdingPatternMar2023Route: ShareholdingPatternMar2023Route,
+  ShareholdingPatternMar2025Route: ShareholdingPatternMar2025Route,
+  ShareholdingPatternMarch2017Route: ShareholdingPatternMarch2017Route,
+  ShareholdingPatternSep2020Route: ShareholdingPatternSep2020Route,
+  ShareholdingPatternSep2021Route: ShareholdingPatternSep2021Route,
+  ShareholdingPatternSep2022Route: ShareholdingPatternSep2022Route,
+  ShareholdingPatternSep2023Route: ShareholdingPatternSep2023Route,
+  ShareholdingPatternSep2025Route: ShareholdingPatternSep2025Route,
   ShareholdingPatternSept2016Route: ShareholdingPatternSept2016Route,
 }
 export const routeTree = rootRouteImport
