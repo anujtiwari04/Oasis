@@ -5,6 +5,8 @@ import oasisLogo from "@/assets/Oasis Logo.png";
 import postalBallotNotice from "@/assets/postal-ballot-notice.pdf";
 import compositionOfCommittees from "@/assets/COMPOSITION OF COMMITTEES.pdf";
 import bookClosure2025 from "@/assets/book-closure-2025.pdf";
+import outcomeOfBoardMeeting from "@/assets/OUTCOME OF BOARD MEETING.pdf";
+import dlofAsset from "@/assets/DLOF.pdf";
 
 const navLinks = [
   { href: "#home", label: "Home" },
@@ -37,9 +39,9 @@ const corporateItems = [
   { href: "/agm-results", label: "AGM Results" },
   { href: "#", label: "Circulars & Disclosures" },
   { href: "/forms", label: "Forms" },
-  { href: "#", label: "Newspaper Publications" },
-  { href: "#", label: "Outcome" },
-  { href: "#", label: "Dlof" },
+  { href: "/newspaper-publications", label: "Newspaper Publications" },
+  { href: outcomeOfBoardMeeting, label: "Outcome", download: "OUTCOME OF BOARD MEETING.pdf" },
+  { href: dlofAsset, label: "DLOF", download: "DLOF.pdf" },
 ];
 
 export function Header() {

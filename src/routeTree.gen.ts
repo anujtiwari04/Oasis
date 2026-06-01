@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as ShareTransferAgentRouteImport } from './routes/share-transfer-agent'
 import { Route as ScrutinizersReportRouteImport } from './routes/scrutinizers-report'
 import { Route as PoliciesRouteImport } from './routes/policies'
+import { Route as NewspaperPublicationsRouteImport } from './routes/newspaper-publications'
 import { Route as KeyManagementPersonnelRouteImport } from './routes/key-management-personnel'
 import { Route as FormsRouteImport } from './routes/forms'
 import { Route as FinancialResultsRouteImport } from './routes/financial-results'
@@ -36,6 +37,11 @@ const ScrutinizersReportRoute = ScrutinizersReportRouteImport.update({
 const PoliciesRoute = PoliciesRouteImport.update({
   id: '/policies',
   path: '/policies',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NewspaperPublicationsRoute = NewspaperPublicationsRouteImport.update({
+  id: '/newspaper-publications',
+  path: '/newspaper-publications',
   getParentRoute: () => rootRouteImport,
 } as any)
 const KeyManagementPersonnelRoute = KeyManagementPersonnelRouteImport.update({
@@ -100,6 +106,7 @@ export interface FileRoutesByFullPath {
   '/financial-results': typeof FinancialResultsRoute
   '/forms': typeof FormsRoute
   '/key-management-personnel': typeof KeyManagementPersonnelRoute
+  '/newspaper-publications': typeof NewspaperPublicationsRoute
   '/policies': typeof PoliciesRoute
   '/scrutinizers-report': typeof ScrutinizersReportRoute
   '/share-transfer-agent': typeof ShareTransferAgentRoute
@@ -115,6 +122,7 @@ export interface FileRoutesByTo {
   '/financial-results': typeof FinancialResultsRoute
   '/forms': typeof FormsRoute
   '/key-management-personnel': typeof KeyManagementPersonnelRoute
+  '/newspaper-publications': typeof NewspaperPublicationsRoute
   '/policies': typeof PoliciesRoute
   '/scrutinizers-report': typeof ScrutinizersReportRoute
   '/share-transfer-agent': typeof ShareTransferAgentRoute
@@ -131,6 +139,7 @@ export interface FileRoutesById {
   '/financial-results': typeof FinancialResultsRoute
   '/forms': typeof FormsRoute
   '/key-management-personnel': typeof KeyManagementPersonnelRoute
+  '/newspaper-publications': typeof NewspaperPublicationsRoute
   '/policies': typeof PoliciesRoute
   '/scrutinizers-report': typeof ScrutinizersReportRoute
   '/share-transfer-agent': typeof ShareTransferAgentRoute
@@ -148,6 +157,7 @@ export interface FileRouteTypes {
     | '/financial-results'
     | '/forms'
     | '/key-management-personnel'
+    | '/newspaper-publications'
     | '/policies'
     | '/scrutinizers-report'
     | '/share-transfer-agent'
@@ -163,6 +173,7 @@ export interface FileRouteTypes {
     | '/financial-results'
     | '/forms'
     | '/key-management-personnel'
+    | '/newspaper-publications'
     | '/policies'
     | '/scrutinizers-report'
     | '/share-transfer-agent'
@@ -178,6 +189,7 @@ export interface FileRouteTypes {
     | '/financial-results'
     | '/forms'
     | '/key-management-personnel'
+    | '/newspaper-publications'
     | '/policies'
     | '/scrutinizers-report'
     | '/share-transfer-agent'
@@ -194,6 +206,7 @@ export interface RootRouteChildren {
   FinancialResultsRoute: typeof FinancialResultsRoute
   FormsRoute: typeof FormsRoute
   KeyManagementPersonnelRoute: typeof KeyManagementPersonnelRoute
+  NewspaperPublicationsRoute: typeof NewspaperPublicationsRoute
   PoliciesRoute: typeof PoliciesRoute
   ScrutinizersReportRoute: typeof ScrutinizersReportRoute
   ShareTransferAgentRoute: typeof ShareTransferAgentRoute
@@ -220,6 +233,13 @@ declare module '@tanstack/react-router' {
       path: '/policies'
       fullPath: '/policies'
       preLoaderRoute: typeof PoliciesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/newspaper-publications': {
+      id: '/newspaper-publications'
+      path: '/newspaper-publications'
+      fullPath: '/newspaper-publications'
+      preLoaderRoute: typeof NewspaperPublicationsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/key-management-personnel': {
@@ -306,6 +326,7 @@ const rootRouteChildren: RootRouteChildren = {
   FinancialResultsRoute: FinancialResultsRoute,
   FormsRoute: FormsRoute,
   KeyManagementPersonnelRoute: KeyManagementPersonnelRoute,
+  NewspaperPublicationsRoute: NewspaperPublicationsRoute,
   PoliciesRoute: PoliciesRoute,
   ScrutinizersReportRoute: ScrutinizersReportRoute,
   ShareTransferAgentRoute: ShareTransferAgentRoute,
