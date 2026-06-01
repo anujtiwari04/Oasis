@@ -31,7 +31,7 @@ const corporateItems = [
   { href: "/financial-results", label: "Financial Results" },
   { href: "#", label: "Shareholding pattern" },
   { href: "/share-transfer-agent", label: "Share Transfer Agent (RTA)" },
-  { href: "#", label: "Annual Reports" },
+  { href: "/annual-reports", label: "Annual Reports" },
   { href: "#", label: "Book Closure" },
   { href: "#", label: "AGM Results" },
   { href: "#", label: "Circulars & Disclosures" },
