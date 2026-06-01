@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ShareholdingPatternSept2016RouteImport } from './routes/shareholding-pattern-sept-2016'
 import { Route as ShareholdingPatternRouteImport } from './routes/shareholding-pattern'
 import { Route as ShareTransferAgentRouteImport } from './routes/share-transfer-agent'
 import { Route as ScrutinizersReportRouteImport } from './routes/scrutinizers-report'
@@ -26,6 +27,12 @@ import { Route as AgmResultsRouteImport } from './routes/agm-results'
 import { Route as AgmNoticesRouteImport } from './routes/agm-notices'
 import { Route as IndexRouteImport } from './routes/index'
 
+const ShareholdingPatternSept2016Route =
+  ShareholdingPatternSept2016RouteImport.update({
+    id: '/shareholding-pattern-sept-2016',
+    path: '/shareholding-pattern-sept-2016',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ShareholdingPatternRoute = ShareholdingPatternRouteImport.update({
   id: '/shareholding-pattern',
   path: '/shareholding-pattern',
@@ -124,6 +131,7 @@ export interface FileRoutesByFullPath {
   '/scrutinizers-report': typeof ScrutinizersReportRoute
   '/share-transfer-agent': typeof ShareTransferAgentRoute
   '/shareholding-pattern': typeof ShareholdingPatternRoute
+  '/shareholding-pattern-sept-2016': typeof ShareholdingPatternSept2016Route
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -142,6 +150,7 @@ export interface FileRoutesByTo {
   '/scrutinizers-report': typeof ScrutinizersReportRoute
   '/share-transfer-agent': typeof ShareTransferAgentRoute
   '/shareholding-pattern': typeof ShareholdingPatternRoute
+  '/shareholding-pattern-sept-2016': typeof ShareholdingPatternSept2016Route
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -161,6 +170,7 @@ export interface FileRoutesById {
   '/scrutinizers-report': typeof ScrutinizersReportRoute
   '/share-transfer-agent': typeof ShareTransferAgentRoute
   '/shareholding-pattern': typeof ShareholdingPatternRoute
+  '/shareholding-pattern-sept-2016': typeof ShareholdingPatternSept2016Route
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -181,6 +191,7 @@ export interface FileRouteTypes {
     | '/scrutinizers-report'
     | '/share-transfer-agent'
     | '/shareholding-pattern'
+    | '/shareholding-pattern-sept-2016'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -199,6 +210,7 @@ export interface FileRouteTypes {
     | '/scrutinizers-report'
     | '/share-transfer-agent'
     | '/shareholding-pattern'
+    | '/shareholding-pattern-sept-2016'
   id:
     | '__root__'
     | '/'
@@ -217,6 +229,7 @@ export interface FileRouteTypes {
     | '/scrutinizers-report'
     | '/share-transfer-agent'
     | '/shareholding-pattern'
+    | '/shareholding-pattern-sept-2016'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -236,10 +249,18 @@ export interface RootRouteChildren {
   ScrutinizersReportRoute: typeof ScrutinizersReportRoute
   ShareTransferAgentRoute: typeof ShareTransferAgentRoute
   ShareholdingPatternRoute: typeof ShareholdingPatternRoute
+  ShareholdingPatternSept2016Route: typeof ShareholdingPatternSept2016Route
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/shareholding-pattern-sept-2016': {
+      id: '/shareholding-pattern-sept-2016'
+      path: '/shareholding-pattern-sept-2016'
+      fullPath: '/shareholding-pattern-sept-2016'
+      preLoaderRoute: typeof ShareholdingPatternSept2016RouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/shareholding-pattern': {
       id: '/shareholding-pattern'
       path: '/shareholding-pattern'
@@ -372,6 +393,7 @@ const rootRouteChildren: RootRouteChildren = {
   ScrutinizersReportRoute: ScrutinizersReportRoute,
   ShareTransferAgentRoute: ShareTransferAgentRoute,
   ShareholdingPatternRoute: ShareholdingPatternRoute,
+  ShareholdingPatternSept2016Route: ShareholdingPatternSept2016Route,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

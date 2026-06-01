@@ -196,14 +196,21 @@ function ShareholdingPatternPage() {
                       <tr key={item.title} className="hover:bg-slate-50 transition-colors">
                         <td className="px-6 py-4">
                           <div className="flex items-center gap-3">
-                            <FileText className={`h-5 w-5 ${item.pdf ? "text-slate-400" : "text-slate-200"} shrink-0`} />
-                            <span className={`text-sm font-semibold ${item.pdf ? "text-slate-800" : "text-slate-400"}`}>
+                            <FileText className={`h-5 w-5 ${item.pdf || item.title === "Sept 2016" ? "text-slate-400" : "text-slate-200"} shrink-0`} />
+                            <span className={`text-sm font-semibold ${item.pdf || item.title === "Sept 2016" ? "text-slate-800" : "text-slate-400"}`}>
                               {item.title}
                             </span>
                           </div>
                         </td>
                         <td className="px-6 py-4 text-right">
-                          {item.pdf ? (
+                          {item.title === "Sept 2016" ? (
+                            <a
+                              href="/shareholding-pattern-sept-2016"
+                              className="inline-flex items-center gap-1.5 rounded-lg bg-slate-900 px-3.5 py-2 text-xs font-semibold text-white transition-colors hover:bg-slate-800 focus:outline-none"
+                            >
+                              View
+                            </a>
+                          ) : item.pdf ? (
                             <a
                               href={item.pdf}
                               download={item.filename}
