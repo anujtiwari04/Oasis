@@ -1,6 +1,6 @@
 export function Footer() {
   const links = [
-    { href: "#contact", label: "Contact Us" },
+    { href: "/contact", label: "Contact Us" },
     { href: "#", label: "FAQ" },
     { href: "#", label: "Disclaimer" },
   ];

@@ -8,13 +8,13 @@ import bookClosure2025 from "@/assets/book-closure-2025.pdf";
 import outcomeOfBoardMeeting from "@/assets/OUTCOME OF BOARD MEETING.pdf";
 import dlofAsset from "@/assets/DLOF.pdf";
 
-const navLinks = [
-  { href: "#home", label: "Home" },
-  { href: "#about", label: "About" },
-  { href: "#corporate", label: "Corporate" },
-  { href: "#links", label: "Links" },
-  { href: "#contact", label: "Contact" },
-];
+// Open Offers 2023 PDF Imports
+import openOfferPA from "@/assets/Open offers/PA-Oasis_Securities_Limited.pdf";
+import openOfferDPS from "@/assets/Open offers/DPS-Oasis.pdf";
+import openOfferDLOF from "@/assets/Open offers/dlof_osl.pdf";
+import openOfferCorrDPS from "@/assets/Open offers/Corrigendum to DPS - Oasis_30.05.2024.pdf";
+import openOfferCorrLOF from "@/assets/Open offers/Corrigendum to LOF - Oasis_07.06.2024.pdf";
+import openOfferLOF from "@/assets/Open offers/LOF - Oasis Securities Limited 30.05.2024.pdf";
 
 const postalBallotItems = [
   { href: postalBallotNotice, label: "Notice", download: "postal-ballot-notice.pdf" },
@@ -44,6 +44,24 @@ const corporateItems = [
   { href: dlofAsset, label: "DLOF", download: "DLOF.pdf" },
 ];
 
+const openOffers2023Items = [
+  { href: openOfferPA, label: "Public Announcement", download: "PA-Oasis_Securities_Limited.pdf" },
+  { href: openOfferDPS, label: "Detailed Public Statement", download: "DPS-Oasis.pdf" },
+  { href: openOfferDLOF, label: "Draft Letter of Offer", download: "dlof_osl.pdf" },
+  { href: openOfferCorrDPS, label: "Corrigendum to DPS", download: "Corrigendum to DPS - Oasis_30.05.2024.pdf" },
+  { href: openOfferCorrLOF, label: "Corrigendum to LOF", download: "Corrigendum to LOF - Oasis_07.06.2024.pdf" },
+  { href: openOfferLOF, label: "LOF-OasisSecurities Limited", download: "LOF - Oasis Securities Limited 30.05.2024.pdf" },
+];
+
+const navLinks = [
+  { href: "/", label: "Home" },
+  { href: "#about", label: "About" },
+  { href: "#corporate", label: "Corporate", children: corporateItems },
+  { href: "#open-offers", label: "Open Offers 2023", children: openOffers2023Items },
+  { href: "#links", label: "Links" },
+  { href: "/contact", label: "Contact" },
+];
+
 export function Header() {
   const [open, setOpen] = useState(false);
   const [activeCorporateSubmenu, setActiveCorporateSubmenu] = useState<string | null>(null);
@@ -65,7 +83,7 @@ export function Header() {
       <header className="bg-white/90 backdrop-blur-md sticky top-0 z-50 border-b border-gray-100">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid h-16 grid-cols-[1fr_auto_1fr] items-center">
-            <a href="#home" className="flex items-center gap-2" aria-label="Oasis Securities Limited home">
+            <a href="/" className="flex items-center gap-2" aria-label="Oasis Securities Limited home">
               <img src={oasisLogo} alt="Oasis Securities Limited" className="h-9 w-auto object-contain" />
               <span className="font-extrabold tracking-tight text-slate-900 text-sm sm:text-base">
                 OASIS SECURITIES LTD
@@ -74,7 +92,7 @@ export function Header() {
 
             <nav className="hidden md:flex items-center justify-center gap-8" aria-label="Primary">
               {navLinks.map((l) => (
-                l.label === "Corporate" ? (
+                l.children ? (
                   <div key={l.href} className="group relative py-5">
                     <a
                       href={l.href}
@@ -90,9 +108,9 @@ export function Header() {
                       <div className="relative w-72">
                         <ul
                           className="max-h-[500px] overflow-y-auto overflow-x-hidden bg-white text-slate-700 shadow-xl ring-1 ring-slate-200"
-                          aria-label="Corporate menu"
+                          aria-label={`${l.label} menu`}
                         >
-                          {corporateItems.map((item) => (
+                          {l.children.map((item) => (
                             <li
                               key={item.label}
                               className="border-b border-slate-100 last:border-b-0"
@@ -113,7 +131,7 @@ export function Header() {
                           ))}
                         </ul>
 
-                        {activeCorporateSubmenu === "Postal Ballot" ? (
+                        {l.label === "Corporate" && activeCorporateSubmenu === "Postal Ballot" ? (
                           <ul className="absolute left-full top-0 z-10 w-72 bg-white text-slate-700 shadow-xl ring-1 ring-slate-200">
                             {postalBallotItems.map((child) => (
                               <li key={child.label} className="border-b border-slate-100 last:border-b-0">
@@ -145,7 +163,7 @@ export function Header() {
 
             <div className="hidden md:flex justify-end">
               <a
-                href="#contact"
+                href="/contact"
                 className="inline-flex items-center rounded-lg bg-slate-900 px-4 py-2 text-sm font-medium text-white hover:bg-slate-800 transition-colors"
               >
                 Get in Touch
@@ -189,10 +207,10 @@ export function Header() {
                 </button>
               </div>
 
-              <nav className="flex flex-col p-4 gap-1" aria-label="Mobile primary">
+              <nav className="flex flex-col p-4 gap-1 overflow-y-auto" aria-label="Mobile primary">
                 {navLinks.map((l) => (
-                  l.label === "Corporate" ? (
-                    <div key={l.href} className="rounded-lg border border-slate-200">
+                  l.children ? (
+                    <div key={l.href} className="rounded-lg border border-slate-200 mb-1">
                       <a
                         href={l.href}
                         onClick={() => setOpen(false)}
@@ -201,7 +219,7 @@ export function Header() {
                         {l.label}
                       </a>
                       <div className="border-t border-slate-200 bg-slate-50 py-1">
-                        {corporateItems.map((item) => (
+                        {l.children.map((item) => (
                           <div key={item.label}>
                             <a
                               href={item.href}
@@ -235,7 +253,7 @@ export function Header() {
                       key={l.href}
                       href={l.href}
                       onClick={() => setOpen(false)}
-                      className="px-3 py-3 rounded-lg text-slate-700 hover:bg-slate-50 hover:text-slate-900 font-medium transition-colors"
+                      className="px-3 py-3 rounded-lg text-slate-700 hover:bg-slate-50 hover:text-slate-900 font-medium transition-colors mb-1"
                     >
                       {l.label}
                     </a>

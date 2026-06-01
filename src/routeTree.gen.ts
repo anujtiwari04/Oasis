@@ -16,6 +16,7 @@ import { Route as NewspaperPublicationsRouteImport } from './routes/newspaper-pu
 import { Route as KeyManagementPersonnelRouteImport } from './routes/key-management-personnel'
 import { Route as FormsRouteImport } from './routes/forms'
 import { Route as FinancialResultsRouteImport } from './routes/financial-results'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ComplianceOfficerRouteImport } from './routes/compliance-officer'
 import { Route as BoardOfDirectorsRouteImport } from './routes/board-of-directors'
 import { Route as BoardMeetingsNoticesRouteImport } from './routes/board-meetings-notices'
@@ -57,6 +58,11 @@ const FormsRoute = FormsRouteImport.update({
 const FinancialResultsRoute = FinancialResultsRouteImport.update({
   id: '/financial-results',
   path: '/financial-results',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ComplianceOfficerRoute = ComplianceOfficerRouteImport.update({
@@ -103,6 +109,7 @@ export interface FileRoutesByFullPath {
   '/board-meetings-notices': typeof BoardMeetingsNoticesRoute
   '/board-of-directors': typeof BoardOfDirectorsRoute
   '/compliance-officer': typeof ComplianceOfficerRoute
+  '/contact': typeof ContactRoute
   '/financial-results': typeof FinancialResultsRoute
   '/forms': typeof FormsRoute
   '/key-management-personnel': typeof KeyManagementPersonnelRoute
@@ -119,6 +126,7 @@ export interface FileRoutesByTo {
   '/board-meetings-notices': typeof BoardMeetingsNoticesRoute
   '/board-of-directors': typeof BoardOfDirectorsRoute
   '/compliance-officer': typeof ComplianceOfficerRoute
+  '/contact': typeof ContactRoute
   '/financial-results': typeof FinancialResultsRoute
   '/forms': typeof FormsRoute
   '/key-management-personnel': typeof KeyManagementPersonnelRoute
@@ -136,6 +144,7 @@ export interface FileRoutesById {
   '/board-meetings-notices': typeof BoardMeetingsNoticesRoute
   '/board-of-directors': typeof BoardOfDirectorsRoute
   '/compliance-officer': typeof ComplianceOfficerRoute
+  '/contact': typeof ContactRoute
   '/financial-results': typeof FinancialResultsRoute
   '/forms': typeof FormsRoute
   '/key-management-personnel': typeof KeyManagementPersonnelRoute
@@ -154,6 +163,7 @@ export interface FileRouteTypes {
     | '/board-meetings-notices'
     | '/board-of-directors'
     | '/compliance-officer'
+    | '/contact'
     | '/financial-results'
     | '/forms'
     | '/key-management-personnel'
@@ -170,6 +180,7 @@ export interface FileRouteTypes {
     | '/board-meetings-notices'
     | '/board-of-directors'
     | '/compliance-officer'
+    | '/contact'
     | '/financial-results'
     | '/forms'
     | '/key-management-personnel'
@@ -186,6 +197,7 @@ export interface FileRouteTypes {
     | '/board-meetings-notices'
     | '/board-of-directors'
     | '/compliance-officer'
+    | '/contact'
     | '/financial-results'
     | '/forms'
     | '/key-management-personnel'
@@ -203,6 +215,7 @@ export interface RootRouteChildren {
   BoardMeetingsNoticesRoute: typeof BoardMeetingsNoticesRoute
   BoardOfDirectorsRoute: typeof BoardOfDirectorsRoute
   ComplianceOfficerRoute: typeof ComplianceOfficerRoute
+  ContactRoute: typeof ContactRoute
   FinancialResultsRoute: typeof FinancialResultsRoute
   FormsRoute: typeof FormsRoute
   KeyManagementPersonnelRoute: typeof KeyManagementPersonnelRoute
@@ -261,6 +274,13 @@ declare module '@tanstack/react-router' {
       path: '/financial-results'
       fullPath: '/financial-results'
       preLoaderRoute: typeof FinancialResultsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/compliance-officer': {
@@ -323,6 +343,7 @@ const rootRouteChildren: RootRouteChildren = {
   BoardMeetingsNoticesRoute: BoardMeetingsNoticesRoute,
   BoardOfDirectorsRoute: BoardOfDirectorsRoute,
   ComplianceOfficerRoute: ComplianceOfficerRoute,
+  ContactRoute: ContactRoute,
   FinancialResultsRoute: FinancialResultsRoute,
   FormsRoute: FormsRoute,
   KeyManagementPersonnelRoute: KeyManagementPersonnelRoute,
