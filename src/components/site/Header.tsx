@@ -55,10 +55,10 @@ const openOffers2023Items = [
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "#about", label: "About" },
-  { href: "#corporate", label: "Corporate", children: corporateItems },
-  { href: "#open-offers", label: "Open Offers 2023", children: openOffers2023Items },
-  { href: "#links", label: "Links" },
+  { href: "/#about", label: "About" },
+  { href: "/#corporate", label: "Corporate", children: corporateItems },
+  { href: "/#open-offers", label: "Open Offers 2023", children: openOffers2023Items },
+  { href: "/#links", label: "Links" },
   { href: "/contact", label: "Contact" },
 ];
 
