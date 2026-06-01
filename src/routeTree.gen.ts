@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ShareholdingPatternRouteImport } from './routes/shareholding-pattern'
 import { Route as ShareTransferAgentRouteImport } from './routes/share-transfer-agent'
 import { Route as ScrutinizersReportRouteImport } from './routes/scrutinizers-report'
 import { Route as PoliciesRouteImport } from './routes/policies'
@@ -25,6 +26,11 @@ import { Route as AgmResultsRouteImport } from './routes/agm-results'
 import { Route as AgmNoticesRouteImport } from './routes/agm-notices'
 import { Route as IndexRouteImport } from './routes/index'
 
+const ShareholdingPatternRoute = ShareholdingPatternRouteImport.update({
+  id: '/shareholding-pattern',
+  path: '/shareholding-pattern',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ShareTransferAgentRoute = ShareTransferAgentRouteImport.update({
   id: '/share-transfer-agent',
   path: '/share-transfer-agent',
@@ -117,6 +123,7 @@ export interface FileRoutesByFullPath {
   '/policies': typeof PoliciesRoute
   '/scrutinizers-report': typeof ScrutinizersReportRoute
   '/share-transfer-agent': typeof ShareTransferAgentRoute
+  '/shareholding-pattern': typeof ShareholdingPatternRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -134,6 +141,7 @@ export interface FileRoutesByTo {
   '/policies': typeof PoliciesRoute
   '/scrutinizers-report': typeof ScrutinizersReportRoute
   '/share-transfer-agent': typeof ShareTransferAgentRoute
+  '/shareholding-pattern': typeof ShareholdingPatternRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -152,6 +160,7 @@ export interface FileRoutesById {
   '/policies': typeof PoliciesRoute
   '/scrutinizers-report': typeof ScrutinizersReportRoute
   '/share-transfer-agent': typeof ShareTransferAgentRoute
+  '/shareholding-pattern': typeof ShareholdingPatternRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -171,6 +180,7 @@ export interface FileRouteTypes {
     | '/policies'
     | '/scrutinizers-report'
     | '/share-transfer-agent'
+    | '/shareholding-pattern'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -188,6 +198,7 @@ export interface FileRouteTypes {
     | '/policies'
     | '/scrutinizers-report'
     | '/share-transfer-agent'
+    | '/shareholding-pattern'
   id:
     | '__root__'
     | '/'
@@ -205,6 +216,7 @@ export interface FileRouteTypes {
     | '/policies'
     | '/scrutinizers-report'
     | '/share-transfer-agent'
+    | '/shareholding-pattern'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -223,10 +235,18 @@ export interface RootRouteChildren {
   PoliciesRoute: typeof PoliciesRoute
   ScrutinizersReportRoute: typeof ScrutinizersReportRoute
   ShareTransferAgentRoute: typeof ShareTransferAgentRoute
+  ShareholdingPatternRoute: typeof ShareholdingPatternRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/shareholding-pattern': {
+      id: '/shareholding-pattern'
+      path: '/shareholding-pattern'
+      fullPath: '/shareholding-pattern'
+      preLoaderRoute: typeof ShareholdingPatternRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/share-transfer-agent': {
       id: '/share-transfer-agent'
       path: '/share-transfer-agent'
@@ -351,6 +371,7 @@ const rootRouteChildren: RootRouteChildren = {
   PoliciesRoute: PoliciesRoute,
   ScrutinizersReportRoute: ScrutinizersReportRoute,
   ShareTransferAgentRoute: ShareTransferAgentRoute,
+  ShareholdingPatternRoute: ShareholdingPatternRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

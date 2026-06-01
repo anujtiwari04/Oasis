@@ -32,7 +32,7 @@ const corporateItems = [
   { href: "/agm-notices", label: "AGM Notices" },
   { href: "/board-meetings-notices", label: "Board Meetings Notices" },
   { href: "/financial-results", label: "Financial Results" },
-  { href: "#", label: "Shareholding pattern" },
+  { href: "/shareholding-pattern", label: "Shareholding pattern" },
   { href: "/share-transfer-agent", label: "Share Transfer Agent (RTA)" },
   { href: "/annual-reports", label: "Annual Reports" },
   { href: bookClosure2025, label: "Book Closure", download: "book-closure-2025.pdf" },
