@@ -4,6 +4,7 @@ import { ChevronRight, Menu, X, Phone } from "lucide-react";
 import oasisLogo from "@/assets/Oasis Logo.png";
 import postalBallotNotice from "@/assets/postal-ballot-notice.pdf";
 import compositionOfCommittees from "@/assets/COMPOSITION OF COMMITTEES.pdf";
+import bookClosure2025 from "@/assets/book-closure-2025.pdf";
 
 const navLinks = [
   { href: "#home", label: "Home" },
@@ -32,10 +33,10 @@ const corporateItems = [
   { href: "#", label: "Shareholding pattern" },
   { href: "/share-transfer-agent", label: "Share Transfer Agent (RTA)" },
   { href: "/annual-reports", label: "Annual Reports" },
-  { href: "#", label: "Book Closure" },
-  { href: "#", label: "AGM Results" },
+  { href: bookClosure2025, label: "Book Closure", download: "book-closure-2025.pdf" },
+  { href: "/agm-results", label: "AGM Results" },
   { href: "#", label: "Circulars & Disclosures" },
-  { href: "#", label: "Forms" },
+  { href: "/forms", label: "Forms" },
   { href: "#", label: "Newspaper Publications" },
   { href: "#", label: "Outcome" },
   { href: "#", label: "Dlof" },

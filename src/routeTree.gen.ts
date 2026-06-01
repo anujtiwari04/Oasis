@@ -13,11 +13,13 @@ import { Route as ShareTransferAgentRouteImport } from './routes/share-transfer-
 import { Route as ScrutinizersReportRouteImport } from './routes/scrutinizers-report'
 import { Route as PoliciesRouteImport } from './routes/policies'
 import { Route as KeyManagementPersonnelRouteImport } from './routes/key-management-personnel'
+import { Route as FormsRouteImport } from './routes/forms'
 import { Route as FinancialResultsRouteImport } from './routes/financial-results'
 import { Route as ComplianceOfficerRouteImport } from './routes/compliance-officer'
 import { Route as BoardOfDirectorsRouteImport } from './routes/board-of-directors'
 import { Route as BoardMeetingsNoticesRouteImport } from './routes/board-meetings-notices'
 import { Route as AnnualReportsRouteImport } from './routes/annual-reports'
+import { Route as AgmResultsRouteImport } from './routes/agm-results'
 import { Route as AgmNoticesRouteImport } from './routes/agm-notices'
 import { Route as IndexRouteImport } from './routes/index'
 
@@ -39,6 +41,11 @@ const PoliciesRoute = PoliciesRouteImport.update({
 const KeyManagementPersonnelRoute = KeyManagementPersonnelRouteImport.update({
   id: '/key-management-personnel',
   path: '/key-management-personnel',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FormsRoute = FormsRouteImport.update({
+  id: '/forms',
+  path: '/forms',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FinancialResultsRoute = FinancialResultsRouteImport.update({
@@ -66,6 +73,11 @@ const AnnualReportsRoute = AnnualReportsRouteImport.update({
   path: '/annual-reports',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AgmResultsRoute = AgmResultsRouteImport.update({
+  id: '/agm-results',
+  path: '/agm-results',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AgmNoticesRoute = AgmNoticesRouteImport.update({
   id: '/agm-notices',
   path: '/agm-notices',
@@ -80,11 +92,13 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/agm-notices': typeof AgmNoticesRoute
+  '/agm-results': typeof AgmResultsRoute
   '/annual-reports': typeof AnnualReportsRoute
   '/board-meetings-notices': typeof BoardMeetingsNoticesRoute
   '/board-of-directors': typeof BoardOfDirectorsRoute
   '/compliance-officer': typeof ComplianceOfficerRoute
   '/financial-results': typeof FinancialResultsRoute
+  '/forms': typeof FormsRoute
   '/key-management-personnel': typeof KeyManagementPersonnelRoute
   '/policies': typeof PoliciesRoute
   '/scrutinizers-report': typeof ScrutinizersReportRoute
@@ -93,11 +107,13 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/agm-notices': typeof AgmNoticesRoute
+  '/agm-results': typeof AgmResultsRoute
   '/annual-reports': typeof AnnualReportsRoute
   '/board-meetings-notices': typeof BoardMeetingsNoticesRoute
   '/board-of-directors': typeof BoardOfDirectorsRoute
   '/compliance-officer': typeof ComplianceOfficerRoute
   '/financial-results': typeof FinancialResultsRoute
+  '/forms': typeof FormsRoute
   '/key-management-personnel': typeof KeyManagementPersonnelRoute
   '/policies': typeof PoliciesRoute
   '/scrutinizers-report': typeof ScrutinizersReportRoute
@@ -107,11 +123,13 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/agm-notices': typeof AgmNoticesRoute
+  '/agm-results': typeof AgmResultsRoute
   '/annual-reports': typeof AnnualReportsRoute
   '/board-meetings-notices': typeof BoardMeetingsNoticesRoute
   '/board-of-directors': typeof BoardOfDirectorsRoute
   '/compliance-officer': typeof ComplianceOfficerRoute
   '/financial-results': typeof FinancialResultsRoute
+  '/forms': typeof FormsRoute
   '/key-management-personnel': typeof KeyManagementPersonnelRoute
   '/policies': typeof PoliciesRoute
   '/scrutinizers-report': typeof ScrutinizersReportRoute
@@ -122,11 +140,13 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/agm-notices'
+    | '/agm-results'
     | '/annual-reports'
     | '/board-meetings-notices'
     | '/board-of-directors'
     | '/compliance-officer'
     | '/financial-results'
+    | '/forms'
     | '/key-management-personnel'
     | '/policies'
     | '/scrutinizers-report'
@@ -135,11 +155,13 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/agm-notices'
+    | '/agm-results'
     | '/annual-reports'
     | '/board-meetings-notices'
     | '/board-of-directors'
     | '/compliance-officer'
     | '/financial-results'
+    | '/forms'
     | '/key-management-personnel'
     | '/policies'
     | '/scrutinizers-report'
@@ -148,11 +170,13 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/agm-notices'
+    | '/agm-results'
     | '/annual-reports'
     | '/board-meetings-notices'
     | '/board-of-directors'
     | '/compliance-officer'
     | '/financial-results'
+    | '/forms'
     | '/key-management-personnel'
     | '/policies'
     | '/scrutinizers-report'
@@ -162,11 +186,13 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AgmNoticesRoute: typeof AgmNoticesRoute
+  AgmResultsRoute: typeof AgmResultsRoute
   AnnualReportsRoute: typeof AnnualReportsRoute
   BoardMeetingsNoticesRoute: typeof BoardMeetingsNoticesRoute
   BoardOfDirectorsRoute: typeof BoardOfDirectorsRoute
   ComplianceOfficerRoute: typeof ComplianceOfficerRoute
   FinancialResultsRoute: typeof FinancialResultsRoute
+  FormsRoute: typeof FormsRoute
   KeyManagementPersonnelRoute: typeof KeyManagementPersonnelRoute
   PoliciesRoute: typeof PoliciesRoute
   ScrutinizersReportRoute: typeof ScrutinizersReportRoute
@@ -201,6 +227,13 @@ declare module '@tanstack/react-router' {
       path: '/key-management-personnel'
       fullPath: '/key-management-personnel'
       preLoaderRoute: typeof KeyManagementPersonnelRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/forms': {
+      id: '/forms'
+      path: '/forms'
+      fullPath: '/forms'
+      preLoaderRoute: typeof FormsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/financial-results': {
@@ -238,6 +271,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AnnualReportsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/agm-results': {
+      id: '/agm-results'
+      path: '/agm-results'
+      fullPath: '/agm-results'
+      preLoaderRoute: typeof AgmResultsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/agm-notices': {
       id: '/agm-notices'
       path: '/agm-notices'
@@ -258,11 +298,13 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AgmNoticesRoute: AgmNoticesRoute,
+  AgmResultsRoute: AgmResultsRoute,
   AnnualReportsRoute: AnnualReportsRoute,
   BoardMeetingsNoticesRoute: BoardMeetingsNoticesRoute,
   BoardOfDirectorsRoute: BoardOfDirectorsRoute,
   ComplianceOfficerRoute: ComplianceOfficerRoute,
   FinancialResultsRoute: FinancialResultsRoute,
+  FormsRoute: FormsRoute,
   KeyManagementPersonnelRoute: KeyManagementPersonnelRoute,
   PoliciesRoute: PoliciesRoute,
   ScrutinizersReportRoute: ScrutinizersReportRoute,
