@@ -141,9 +141,11 @@ const shareholdingData: PatternItem[] = [
 function ShareholdingPatternPage() {
   const [searchQuery, setSearchQuery] = useState("");
 
-  const filteredData = shareholdingData.filter((item) =>
-    item.title.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  const filteredData = [...shareholdingData]
+    .reverse()
+    .filter((item) =>
+      item.title.toLowerCase().includes(searchQuery.toLowerCase())
+    );
 
   return (
     <div className="min-h-screen bg-white text-slate-900 antialiased flex flex-col justify-between">
@@ -196,14 +198,21 @@ function ShareholdingPatternPage() {
                       <tr key={item.title} className="hover:bg-slate-50 transition-colors">
                         <td className="px-6 py-4">
                           <div className="flex items-center gap-3">
-                            <FileText className={`h-5 w-5 ${item.pdf || item.title === "Sept 2016" || item.title === "Dec 2016" || item.title === "March 2017" || item.title === "Sep 2020" || item.title === "Dec 2020" || item.title === "Mar 2021" || item.title === "June 2021" || item.title === "Sep 2021" || item.title === "Dec 2021" || item.title === "Mar 2022" || item.title === "Sep 2022" || item.title === "Dec 2022" || item.title === "Mar 2023" || item.title === "June 2023" || item.title === "Sept 2023" || item.title === "June 2024" || item.title === "December 2024" || item.title === "March 2025" || item.title === "June 2025" || item.title === "September 2025" || item.title === "December 2025" ? "text-slate-400" : "text-slate-200"} shrink-0`} />
-                            <span className={`text-sm font-semibold ${item.pdf || item.title === "Sept 2016" || item.title === "Dec 2016" || item.title === "March 2017" || item.title === "Sep 2020" || item.title === "Dec 2020" || item.title === "Mar 2021" || item.title === "June 2021" || item.title === "Sep 2021" || item.title === "Dec 2021" || item.title === "Mar 2022" || item.title === "Sep 2022" || item.title === "Dec 2022" || item.title === "Mar 2023" || item.title === "June 2023" || item.title === "Sept 2023" || item.title === "June 2024" || item.title === "December 2024" || item.title === "March 2025" || item.title === "June 2025" || item.title === "September 2025" || item.title === "December 2025" ? "text-slate-800" : "text-slate-400"}`}>
+                            <FileText className={`h-5 w-5 ${item.pdf || item.title === "Sept 2016" || item.title === "Dec 2016" || item.title === "March 2017" || item.title === "Sep 2020" || item.title === "Dec 2020" || item.title === "Mar 2021" || item.title === "June 2021" || item.title === "Sep 2021" || item.title === "Dec 2021" || item.title === "Mar 2022" || item.title === "Sep 2022" || item.title === "Dec 2022" || item.title === "Mar 2023" || item.title === "June 2023" || item.title === "Sept 2023" || item.title === "June 2024" || item.title === "December 2024" || item.title === "March 2025" || item.title === "June 2025" || item.title === "September 2025" || item.title === "December 2025" || item.title === "March 2026" ? "text-slate-400" : "text-slate-200"} shrink-0`} />
+                            <span className={`text-sm font-semibold ${item.pdf || item.title === "Sept 2016" || item.title === "Dec 2016" || item.title === "March 2017" || item.title === "Sep 2020" || item.title === "Dec 2020" || item.title === "Mar 2021" || item.title === "June 2021" || item.title === "Sep 2021" || item.title === "Dec 2021" || item.title === "Mar 2022" || item.title === "Sep 2022" || item.title === "Dec 2022" || item.title === "Mar 2023" || item.title === "June 2023" || item.title === "Sept 2023" || item.title === "June 2024" || item.title === "December 2024" || item.title === "March 2025" || item.title === "June 2025" || item.title === "September 2025" || item.title === "December 2025" || item.title === "March 2026" ? "text-slate-800" : "text-slate-400"}`}>
                               {item.title}
                             </span>
                           </div>
                         </td>
                         <td className="px-6 py-4 text-right">
-                          {item.title === "December 2025" ? (
+                          {item.title === "March 2026" ? (
+                            <a
+                              href="/shareholding-pattern-mar-2026"
+                              className="inline-flex items-center gap-1.5 rounded-lg bg-slate-900 px-3.5 py-2 text-xs font-semibold text-white transition-colors hover:bg-slate-800 focus:outline-none"
+                            >
+                              View
+                            </a>
+                          ) : item.title === "December 2025" ? (
                             <a
                               href="/shareholding-pattern-dec-2025"
                               className="inline-flex items-center gap-1.5 rounded-lg bg-slate-900 px-3.5 py-2 text-xs font-semibold text-white transition-colors hover:bg-slate-800 focus:outline-none"
