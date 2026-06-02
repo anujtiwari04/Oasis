@@ -61,7 +61,7 @@ export function About() {
               {[
                 "Incorporated on November 6, 1986 as Abhishek India Ltd.",
                 "Renamed to Oasis Securities Limited on February 1, 1995.",
-                "Promoter: Shri Indra Kumar Bagri.",
+                "Promoter: Rajesh Kumar Sodhani",
               ].map((t) => (
                 <li key={t} className="flex gap-3 text-slate-700">
                   <span className="mt-2 h-1.5 w-1.5 rounded-full bg-slate-900 shrink-0" />
