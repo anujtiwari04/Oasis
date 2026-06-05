@@ -4,23 +4,23 @@ import { TrendingUp, Briefcase, ShieldCheck, Wallet, Building2 } from "lucide-re
 const services = [
   {
     icon: TrendingUp,
-    title: "Mutual Fund Distribution",
-    desc: "Curated mutual fund options aligned with your financial goals.",
+    title: "Financial Insight",
+    desc: "Clear perspective to support informed financial decisions.",
   },
   {
     icon: Briefcase,
-    title: "I.P.O. Activities",
-    desc: "Participate in primary market opportunities with expert guidance.",
+    title: "Market Experience",
+    desc: "A long-standing presence across evolving market conditions.",
   },
   {
     icon: ShieldCheck,
-    title: "Life Insurance",
-    desc: "Protect what matters most with trusted insurance solutions.",
+    title: "Governance Focus",
+    desc: "Disciplined operations aligned with applicable regulations.",
   },
   {
     icon: Wallet,
-    title: "Retail Loans",
-    desc: "Tailored credit solutions for individuals and businesses.",
+    title: "Client-Centric Approach",
+    desc: "Practical support built around clarity, trust, and continuity.",
   },
 ];
 
