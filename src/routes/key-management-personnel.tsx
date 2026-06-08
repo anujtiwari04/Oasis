@@ -18,7 +18,7 @@ const personnel = [
     phone: "9257056969",
   },
   {
-    name: "Ms. Kirti Ranka",
+    name: "Mrs. Kirti Mool Chand Jain",
     designation: "C.S. & Compliance Officer",
   },
   {

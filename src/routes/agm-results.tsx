@@ -16,12 +16,19 @@ import agm2021_proc from "@/assets/AGM Results/35th-AGM-Outcome-Proceedings.pdf"
 import agm2022_proc from "@/assets/AGM Results/Oasis_Sec_Ltd_36th_AGM_Outcome -Proceedings_2023.pdf";
 import agm2023_proc from "@/assets/AGM Results/AGM-proceeding-oasis.pdf";
 import agm2024_proc from "@/assets/AGM Results/Proceedings-2025.pdf";
+import noticeOfEGM from "@/assets/Notice of EGM.pdf";
 
 export const Route = createFileRoute("/agm-results")({
   component: AGMResultsPage,
 });
 
 const agmResults = [
+  {
+    year: "EOGM",
+    reports: [
+      { title: "Notice of EGM", href: noticeOfEGM, filename: "Notice of EGM.pdf" }
+    ]
+  },
   {
     year: "2024-25",
     reports: [

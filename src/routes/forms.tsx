@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { Download, FileText } from "lucide-react";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
@@ -11,7 +11,10 @@ import formSh13 from "@/assets/Forms/Form_SH_13_Nomination_Form.pdf";
 import formSh14_cancel from "@/assets/Forms/Form_SH_14_Cancellation_of_Nomination.pdf";
 import formSh14_req from "@/assets/Forms/Format of request letter for change of address.pdf";
 import formSh14_dup from "@/assets/Forms/Duplicate shares issuance process.pdf";
-import formMgt7 from "@/assets/Forms/Duplicate shares issuance process (1).pdf";
+import formMoa from "@/assets/Forms/MOA.pdf";
+import formAoa from "@/assets/Forms/AOA.pdf";
+import formMgt7_23_24 from "@/assets/Forms/FORM MGT7 (2023-24).pdf";
+import formMgt7_25 from "@/assets/Forms/MGT-7_2025.pdf";
 
 export const Route = createFileRoute("/forms")({
   component: FormsPage,
@@ -54,9 +57,29 @@ const forms = [
     filename: "Duplicate shares issuance process.pdf",
   },
   {
-    title: "FORM MGT7",
-    href: formMgt7,
-    filename: "Duplicate shares issuance process (1).pdf",
+    title: "Copy of MOA",
+    href: formMoa,
+    filename: "MOA.pdf",
+  },
+  {
+    title: "Copy of AOA",
+    href: formAoa,
+    filename: "AOA.pdf",
+  },
+  {
+    title: "FORM MGT7 (2023-24)",
+    href: formMgt7_23_24,
+    filename: "FORM MGT7 (2023-24).pdf",
+  },
+  {
+    title: "MGT-7_2025",
+    href: formMgt7_25,
+    filename: "MGT-7_2025.pdf",
+  },
+  {
+    title: "Annual Reports",
+    href: "/annual-returns",
+    isRedirect: true,
   },
 ];
 
@@ -102,14 +125,23 @@ function FormsPage() {
                         </div>
                       </td>
                       <td className="px-5 py-4 text-right">
-                        <a
-                          href={form.href}
-                          download={form.filename}
-                          className="inline-flex items-center gap-1.5 rounded-lg bg-slate-900 px-3.5 py-2 text-xs font-semibold text-white transition-colors hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-900/10"
-                        >
-                          <Download className="h-3.5 w-3.5" aria-hidden="true" />
-                          Download / View PDF
-                        </a>
+                        {form.isRedirect ? (
+                          <Link
+                            to={form.href}
+                            className="inline-flex items-center gap-1.5 rounded-lg bg-slate-900 px-4 py-2 text-xs font-semibold text-white transition-colors hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-900/10"
+                          >
+                            View
+                          </Link>
+                        ) : (
+                          <a
+                            href={form.href}
+                            download={form.filename}
+                            className="inline-flex items-center gap-1.5 rounded-lg bg-slate-900 px-3.5 py-2 text-xs font-semibold text-white transition-colors hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-900/10"
+                          >
+                            <Download className="h-3.5 w-3.5" aria-hidden="true" />
+                            Download / View PDF
+                          </a>
+                        )}
                       </td>
                     </tr>
                   ))}

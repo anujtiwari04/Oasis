@@ -19,12 +19,18 @@ import noticeBMNewspaper2016 from "@/assets/Newspaper-Notice-BM.pdf";
 import noticeBMSept2016 from "@/assets/Oasis-notice-for-BM-unaudited-results-sept-2016.pdf";
 import noticeBMJune2017 from "@/assets/Oasis9x8cm2ndjune17.pdf";
 import noticeBMIntimation from "@/assets/BM-Intimation.pdf";
+import priorIntimationBM from "@/assets/Prior Intimation BM.pdf";
 
 export const Route = createFileRoute("/board-meetings-notices")({
   component: BoardMeetingsNoticesPage,
 });
 
 const notices = [
+  {
+    title: "Prior Intimation BM",
+    href: priorIntimationBM,
+    filename: "Prior Intimation BM.pdf",
+  },
   {
     title: "Notice BM JANUARY 2026",
     href: noticeBMJan2026,

@@ -6,6 +6,7 @@ import { Footer } from "@/components/site/Footer";
 
 // Asset imports
 import resDec2025 from "@/assets/FINANCIAL-RESULTS_DEC2025.pdf";
+import resResults2026 from "@/assets/FinancialResults2026.pdf";
 import resResult from "@/assets/FINANCIALS RESULT.pdf";
 import resResults2025 from "@/assets/financial-results-2025.pdf";
 import resUnauditedSept2023 from "@/assets/Oasis Sec Ltd_unaudited fin results_qtr and half year_Sept 2023.pdf";
@@ -64,6 +65,12 @@ export const Route = createFileRoute("/financial-results")({
 });
 
 const rawResults = [
+  {
+    title: "Financial Results Mar 2026",
+    href: resResults2026,
+    filename: "FinancialResults2026.pdf",
+    type: "audited",
+  },
   {
     title: "Financial Result Dec 2025",
     href: resDec2025,

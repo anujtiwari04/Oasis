@@ -55,6 +55,14 @@ const directors = [
     pan: "AKOPK6142R",
     uidDin: "10269674",
   },
+  {
+    srNo: 7,
+    name: "Tushar Agarwal",
+    designation: "Director",
+    residentialAddress: "131 B Gayatri Nagar B Jaipur-302018 Rajasthan",
+    pan: "BCAPA1416K",
+    uidDin: "10932962",
+  },
 ];
 
 function BoardOfDirectorsPage() {

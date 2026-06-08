@@ -34,15 +34,18 @@ import { Route as ShareholdingPatternDec2016RouteImport } from './routes/shareho
 import { Route as ShareholdingPatternRouteImport } from './routes/shareholding-pattern'
 import { Route as ShareTransferAgentRouteImport } from './routes/share-transfer-agent'
 import { Route as ScrutinizersReportRouteImport } from './routes/scrutinizers-report'
+import { Route as RscaReportsRouteImport } from './routes/rsca-reports'
 import { Route as PoliciesRouteImport } from './routes/policies'
 import { Route as NewspaperPublicationsRouteImport } from './routes/newspaper-publications'
 import { Route as KeyManagementPersonnelRouteImport } from './routes/key-management-personnel'
+import { Route as InvestorGrievanceRouteImport } from './routes/investor-grievance'
 import { Route as FormsRouteImport } from './routes/forms'
 import { Route as FinancialResultsRouteImport } from './routes/financial-results'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ComplianceOfficerRouteImport } from './routes/compliance-officer'
 import { Route as BoardOfDirectorsRouteImport } from './routes/board-of-directors'
 import { Route as BoardMeetingsNoticesRouteImport } from './routes/board-meetings-notices'
+import { Route as AnnualReturnsRouteImport } from './routes/annual-returns'
 import { Route as AnnualReportsRouteImport } from './routes/annual-reports'
 import { Route as AgmResultsRouteImport } from './routes/agm-results'
 import { Route as AgmNoticesRouteImport } from './routes/agm-notices'
@@ -195,6 +198,11 @@ const ScrutinizersReportRoute = ScrutinizersReportRouteImport.update({
   path: '/scrutinizers-report',
   getParentRoute: () => rootRouteImport,
 } as any)
+const RscaReportsRoute = RscaReportsRouteImport.update({
+  id: '/rsca-reports',
+  path: '/rsca-reports',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PoliciesRoute = PoliciesRouteImport.update({
   id: '/policies',
   path: '/policies',
@@ -208,6 +216,11 @@ const NewspaperPublicationsRoute = NewspaperPublicationsRouteImport.update({
 const KeyManagementPersonnelRoute = KeyManagementPersonnelRouteImport.update({
   id: '/key-management-personnel',
   path: '/key-management-personnel',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InvestorGrievanceRoute = InvestorGrievanceRouteImport.update({
+  id: '/investor-grievance',
+  path: '/investor-grievance',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FormsRoute = FormsRouteImport.update({
@@ -240,6 +253,11 @@ const BoardMeetingsNoticesRoute = BoardMeetingsNoticesRouteImport.update({
   path: '/board-meetings-notices',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AnnualReturnsRoute = AnnualReturnsRouteImport.update({
+  id: '/annual-returns',
+  path: '/annual-returns',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AnnualReportsRoute = AnnualReportsRouteImport.update({
   id: '/annual-reports',
   path: '/annual-reports',
@@ -266,15 +284,18 @@ export interface FileRoutesByFullPath {
   '/agm-notices': typeof AgmNoticesRoute
   '/agm-results': typeof AgmResultsRoute
   '/annual-reports': typeof AnnualReportsRoute
+  '/annual-returns': typeof AnnualReturnsRoute
   '/board-meetings-notices': typeof BoardMeetingsNoticesRoute
   '/board-of-directors': typeof BoardOfDirectorsRoute
   '/compliance-officer': typeof ComplianceOfficerRoute
   '/contact': typeof ContactRoute
   '/financial-results': typeof FinancialResultsRoute
   '/forms': typeof FormsRoute
+  '/investor-grievance': typeof InvestorGrievanceRoute
   '/key-management-personnel': typeof KeyManagementPersonnelRoute
   '/newspaper-publications': typeof NewspaperPublicationsRoute
   '/policies': typeof PoliciesRoute
+  '/rsca-reports': typeof RscaReportsRoute
   '/scrutinizers-report': typeof ScrutinizersReportRoute
   '/share-transfer-agent': typeof ShareTransferAgentRoute
   '/shareholding-pattern': typeof ShareholdingPatternRoute
@@ -306,15 +327,18 @@ export interface FileRoutesByTo {
   '/agm-notices': typeof AgmNoticesRoute
   '/agm-results': typeof AgmResultsRoute
   '/annual-reports': typeof AnnualReportsRoute
+  '/annual-returns': typeof AnnualReturnsRoute
   '/board-meetings-notices': typeof BoardMeetingsNoticesRoute
   '/board-of-directors': typeof BoardOfDirectorsRoute
   '/compliance-officer': typeof ComplianceOfficerRoute
   '/contact': typeof ContactRoute
   '/financial-results': typeof FinancialResultsRoute
   '/forms': typeof FormsRoute
+  '/investor-grievance': typeof InvestorGrievanceRoute
   '/key-management-personnel': typeof KeyManagementPersonnelRoute
   '/newspaper-publications': typeof NewspaperPublicationsRoute
   '/policies': typeof PoliciesRoute
+  '/rsca-reports': typeof RscaReportsRoute
   '/scrutinizers-report': typeof ScrutinizersReportRoute
   '/share-transfer-agent': typeof ShareTransferAgentRoute
   '/shareholding-pattern': typeof ShareholdingPatternRoute
@@ -347,15 +371,18 @@ export interface FileRoutesById {
   '/agm-notices': typeof AgmNoticesRoute
   '/agm-results': typeof AgmResultsRoute
   '/annual-reports': typeof AnnualReportsRoute
+  '/annual-returns': typeof AnnualReturnsRoute
   '/board-meetings-notices': typeof BoardMeetingsNoticesRoute
   '/board-of-directors': typeof BoardOfDirectorsRoute
   '/compliance-officer': typeof ComplianceOfficerRoute
   '/contact': typeof ContactRoute
   '/financial-results': typeof FinancialResultsRoute
   '/forms': typeof FormsRoute
+  '/investor-grievance': typeof InvestorGrievanceRoute
   '/key-management-personnel': typeof KeyManagementPersonnelRoute
   '/newspaper-publications': typeof NewspaperPublicationsRoute
   '/policies': typeof PoliciesRoute
+  '/rsca-reports': typeof RscaReportsRoute
   '/scrutinizers-report': typeof ScrutinizersReportRoute
   '/share-transfer-agent': typeof ShareTransferAgentRoute
   '/shareholding-pattern': typeof ShareholdingPatternRoute
@@ -389,15 +416,18 @@ export interface FileRouteTypes {
     | '/agm-notices'
     | '/agm-results'
     | '/annual-reports'
+    | '/annual-returns'
     | '/board-meetings-notices'
     | '/board-of-directors'
     | '/compliance-officer'
     | '/contact'
     | '/financial-results'
     | '/forms'
+    | '/investor-grievance'
     | '/key-management-personnel'
     | '/newspaper-publications'
     | '/policies'
+    | '/rsca-reports'
     | '/scrutinizers-report'
     | '/share-transfer-agent'
     | '/shareholding-pattern'
@@ -429,15 +459,18 @@ export interface FileRouteTypes {
     | '/agm-notices'
     | '/agm-results'
     | '/annual-reports'
+    | '/annual-returns'
     | '/board-meetings-notices'
     | '/board-of-directors'
     | '/compliance-officer'
     | '/contact'
     | '/financial-results'
     | '/forms'
+    | '/investor-grievance'
     | '/key-management-personnel'
     | '/newspaper-publications'
     | '/policies'
+    | '/rsca-reports'
     | '/scrutinizers-report'
     | '/share-transfer-agent'
     | '/shareholding-pattern'
@@ -469,15 +502,18 @@ export interface FileRouteTypes {
     | '/agm-notices'
     | '/agm-results'
     | '/annual-reports'
+    | '/annual-returns'
     | '/board-meetings-notices'
     | '/board-of-directors'
     | '/compliance-officer'
     | '/contact'
     | '/financial-results'
     | '/forms'
+    | '/investor-grievance'
     | '/key-management-personnel'
     | '/newspaper-publications'
     | '/policies'
+    | '/rsca-reports'
     | '/scrutinizers-report'
     | '/share-transfer-agent'
     | '/shareholding-pattern'
@@ -510,15 +546,18 @@ export interface RootRouteChildren {
   AgmNoticesRoute: typeof AgmNoticesRoute
   AgmResultsRoute: typeof AgmResultsRoute
   AnnualReportsRoute: typeof AnnualReportsRoute
+  AnnualReturnsRoute: typeof AnnualReturnsRoute
   BoardMeetingsNoticesRoute: typeof BoardMeetingsNoticesRoute
   BoardOfDirectorsRoute: typeof BoardOfDirectorsRoute
   ComplianceOfficerRoute: typeof ComplianceOfficerRoute
   ContactRoute: typeof ContactRoute
   FinancialResultsRoute: typeof FinancialResultsRoute
   FormsRoute: typeof FormsRoute
+  InvestorGrievanceRoute: typeof InvestorGrievanceRoute
   KeyManagementPersonnelRoute: typeof KeyManagementPersonnelRoute
   NewspaperPublicationsRoute: typeof NewspaperPublicationsRoute
   PoliciesRoute: typeof PoliciesRoute
+  RscaReportsRoute: typeof RscaReportsRoute
   ScrutinizersReportRoute: typeof ScrutinizersReportRoute
   ShareTransferAgentRoute: typeof ShareTransferAgentRoute
   ShareholdingPatternRoute: typeof ShareholdingPatternRoute
@@ -723,6 +762,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ScrutinizersReportRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/rsca-reports': {
+      id: '/rsca-reports'
+      path: '/rsca-reports'
+      fullPath: '/rsca-reports'
+      preLoaderRoute: typeof RscaReportsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/policies': {
       id: '/policies'
       path: '/policies'
@@ -742,6 +788,13 @@ declare module '@tanstack/react-router' {
       path: '/key-management-personnel'
       fullPath: '/key-management-personnel'
       preLoaderRoute: typeof KeyManagementPersonnelRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/investor-grievance': {
+      id: '/investor-grievance'
+      path: '/investor-grievance'
+      fullPath: '/investor-grievance'
+      preLoaderRoute: typeof InvestorGrievanceRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/forms': {
@@ -786,6 +839,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BoardMeetingsNoticesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/annual-returns': {
+      id: '/annual-returns'
+      path: '/annual-returns'
+      fullPath: '/annual-returns'
+      preLoaderRoute: typeof AnnualReturnsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/annual-reports': {
       id: '/annual-reports'
       path: '/annual-reports'
@@ -822,15 +882,18 @@ const rootRouteChildren: RootRouteChildren = {
   AgmNoticesRoute: AgmNoticesRoute,
   AgmResultsRoute: AgmResultsRoute,
   AnnualReportsRoute: AnnualReportsRoute,
+  AnnualReturnsRoute: AnnualReturnsRoute,
   BoardMeetingsNoticesRoute: BoardMeetingsNoticesRoute,
   BoardOfDirectorsRoute: BoardOfDirectorsRoute,
   ComplianceOfficerRoute: ComplianceOfficerRoute,
   ContactRoute: ContactRoute,
   FinancialResultsRoute: FinancialResultsRoute,
   FormsRoute: FormsRoute,
+  InvestorGrievanceRoute: InvestorGrievanceRoute,
   KeyManagementPersonnelRoute: KeyManagementPersonnelRoute,
   NewspaperPublicationsRoute: NewspaperPublicationsRoute,
   PoliciesRoute: PoliciesRoute,
+  RscaReportsRoute: RscaReportsRoute,
   ScrutinizersReportRoute: ScrutinizersReportRoute,
   ShareTransferAgentRoute: ShareTransferAgentRoute,
   ShareholdingPatternRoute: ShareholdingPatternRoute,

@@ -47,7 +47,7 @@ function ComplianceOfficerPage() {
                     {/* Name */}
                     <div>
                       <span className="text-xs text-slate-400 font-semibold uppercase tracking-wider block mb-1">Name</span>
-                      <p className="text-xl sm:text-2xl font-extrabold text-slate-900">Ms. Kirti Mool Chand Jain</p>
+                      <p className="text-xl sm:text-2xl font-extrabold text-slate-900">Mrs. Kirti Mool Chand Jain</p>
                     </div>
 
                     {/* Address */}

@@ -6,6 +6,7 @@ import { Footer } from "@/components/site/Footer";
 
 // Asset imports
 import np1 from "@/assets/Newspaper Publications/Oasis_published_unaudited fin results_30.09.2023_ML_09.11.2023.pdf";
+import np2026 from "@/assets/Newspaper Publications/Newspaper Publication 2026.pdf";
 import np2 from "@/assets/Newspaper Publications/Oasis_published_unaudited fin results_30.09.2023_FE_09.11.2023.pdf";
 import np3 from "@/assets/Newspaper Publications/Oasis_publishing_Unaudited_fin_results_30.06.2023_FE_12.08.2023.pdf";
 import np4 from "@/assets/Newspaper Publications/Oasis_publishing_unaudited_fin_results_30.06.2023_ML_12.08.2023.pdf";
@@ -47,6 +48,7 @@ export const Route = createFileRoute("/newspaper-publications")({
 });
 
 const publications = [
+  { title: "Newspaper Publication 2026", href: np2026, filename: "Newspaper Publication 2026.pdf" },
   { title: "Oasis publishing unaudited fin results 30.09.2023 ML 09.11.2023", href: np1, filename: "Oasis_published_unaudited fin results_30.09.2023_ML_09.11.2023.pdf" },
   { title: "Oasis published unaudited fin results 30.09.2023 FE 09.11.2023", href: np2, filename: "Oasis_published_unaudited fin results_30.09.2023_FE_09.11.2023.pdf" },
   { title: "Oasis publishing unaudited fin results 30.06.2023 FE 12.08.2023", href: np3, filename: "Oasis_publishing_Unaudited_fin_results_30.06.2023_FE_12.08.2023.pdf" },
