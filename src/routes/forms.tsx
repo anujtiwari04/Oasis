@@ -13,8 +13,6 @@ import formSh14_req from "@/assets/Forms/Format of request letter for change of 
 import formSh14_dup from "@/assets/Forms/Duplicate shares issuance process.pdf";
 import formMoa from "@/assets/Forms/MOA.pdf";
 import formAoa from "@/assets/Forms/AOA.pdf";
-import formMgt7_23_24 from "@/assets/Forms/FORM MGT7 (2023-24).pdf";
-import formMgt7_25 from "@/assets/Forms/MGT-7_2025.pdf";
 
 export const Route = createFileRoute("/forms")({
   component: FormsPage,
@@ -65,16 +63,6 @@ const forms = [
     title: "Copy of AOA",
     href: formAoa,
     filename: "AOA.pdf",
-  },
-  {
-    title: "FORM MGT7 (2023-24)",
-    href: formMgt7_23_24,
-    filename: "FORM MGT7 (2023-24).pdf",
-  },
-  {
-    title: "MGT-7_2025",
-    href: formMgt7_25,
-    filename: "MGT-7_2025.pdf",
   },
   {
     title: "Annual Returns",

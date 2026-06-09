@@ -1,111 +1,93 @@
 import { motion } from "framer-motion";
-import { TrendingUp, Briefcase, ShieldCheck, Wallet, Building2 } from "lucide-react";
-
-const services = [
-  {
-    icon: TrendingUp,
-    title: "Financial Insight",
-    desc: "Clear perspective to support informed financial decisions.",
-  },
-  {
-    icon: Briefcase,
-    title: "Market Experience",
-    desc: "A long-standing presence across evolving market conditions.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Governance Focus",
-    desc: "Disciplined operations aligned with applicable regulations.",
-  },
-  {
-    icon: Wallet,
-    title: "Client-Centric Approach",
-    desc: "Practical support built around clarity, trust, and continuity.",
-  },
-];
-
-const container = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.12 } },
-};
-
-const item = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-};
+import { Building2, Award, Users, FileText } from "lucide-react";
 
 export function About() {
   return (
-    <section id="about" className="scroll-mt-24 py-24 bg-white" aria-label="About and services">
+    <section id="about" className="scroll-mt-24 py-24 bg-white" aria-label="About Us">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-          {/* Left */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          {/* Left Column - Detailed Text */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
+            className="lg:col-span-7"
           >
             <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-slate-500">
               <span className="h-px w-8 bg-slate-300" /> About Us
             </span>
-            <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900">
+            <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight">
               About Oasis Securities Limited
             </h2>
-            <p className="mt-6 text-lg font-light text-slate-600 leading-relaxed">
-              Oasis Securities Limited is a publicly listed Non-Banking Financial Company with nearly
-              four decades of presence in India's financial services landscape.
-            </p>
-
-            <ul className="mt-8 space-y-4">
-              {[
-                "Incorporated on November 6, 1986 as Abhishek India Ltd.",
-                "Renamed to Oasis Securities Limited on February 1, 1995.",
-                "Managing Director: Rajesh Kumar Sodhani",
-              ].map((t) => (
-                <li key={t} className="flex gap-3 text-slate-700">
-                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-slate-900 shrink-0" />
-                  <span>{t}</span>
-                </li>
-              ))}
-            </ul>
-
-            <div className="mt-8 rounded-lg border border-slate-200 bg-slate-50 p-5 shadow-sm flex items-start gap-3">
-              <Building2 className="h-5 w-5 text-slate-900 mt-0.5 shrink-0" />
-              <div>
-                <p className="text-sm font-semibold text-slate-900">
-                  Public Limited Company &nbsp;|&nbsp; NBFC Reg No: 13.0069
-                </p>
-                <p className="text-xs text-slate-600 mt-1">
-                  Regulated and registered under applicable Indian financial regulations.
-                </p>
-              </div>
+            
+            <div className="mt-8 space-y-6 text-slate-600 text-base sm:text-lg leading-relaxed font-light">
+              <p>
+                <strong>OASIS SECURITIES LIMITED</strong>, a public limited company, originally incorporated on 06th November 1986 is listed on the Bombay Stock Exchange (BSE Scrip Code: 512489) and also an RBI- registered, non-deposit taking Non-Banking Financial Company (NBFC) headquartered in Mumbai.
+              </p>
+              <p>
+                As an NBFC, our primary business is financing and investment activities. Classified as an ‘Base-Layer NBFC’ by the RBI pursuant to Scale Based Regulations, the Company provides loans against property for business or personal needs as well as working capital for business expansion purposes at reasonable interest rates, catering to diverse borrower needs while maintaining a strong focus on credit quality and risk management.
+              </p>
+              <p>
+                Led by Managing Director Mr. Rajesh Kumar Sodhani and Whole Time Director Mr. Devi Dutt Agarwal, the Company is committed to responsible lending, transparency, and delivering long-term value to our investors and clients.
+              </p>
             </div>
           </motion.div>
 
-          {/* Right - services */}
+          {/* Right Column - Quick Facts & Bullet Points */}
           <motion.div
-            variants={container}
-            initial="hidden"
-            whileInView="visible"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
-            className="grid grid-cols-1 sm:grid-cols-2 gap-5"
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="lg:col-span-5 w-full"
           >
-            {services.map((s) => (
-              <motion.div
-                key={s.title}
-                variants={item}
-                whileHover={{ scale: 1.02, y: -4 }}
-                whileTap={{ scale: 0.98 }}
-                className="group rounded-lg border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition-shadow"
-              >
-                <div className="h-11 w-11 rounded-lg bg-slate-900 text-white flex items-center justify-center group-hover:bg-blue-900 transition-colors">
-                  <s.icon className="h-5 w-5" />
+            <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6 sm:p-8 shadow-sm">
+              <h3 className="text-xl font-bold text-slate-950 flex items-center gap-2 border-b border-slate-200 pb-4">
+                <Building2 className="h-5 w-5 text-slate-900" />
+                Company Overview & Highlights
+              </h3>
+              
+              <ul className="mt-6 space-y-4">
+                <li className="flex gap-3 text-slate-700">
+                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-slate-900 shrink-0" />
+                  <span><strong>Incorporation:</strong> 06th November 1986</span>
+                </li>
+                <li className="flex gap-3 text-slate-700">
+                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-slate-900 shrink-0" />
+                  <span><strong>Listing Status:</strong> Listed on BSE (Scrip Code: 512489)</span>
+                </li>
+                <li className="flex gap-3 text-slate-700">
+                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-slate-900 shrink-0" />
+                  <span><strong>Regulatory Status:</strong> RBI-registered, Non-deposit taking NBFC</span>
+                </li>
+                <li className="flex gap-3 text-slate-700">
+                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-slate-900 shrink-0" />
+                  <span><strong>NBFC Classification:</strong> Base-Layer NBFC (pursuant to Scale Based Regulations)</span>
+                </li>
+                <li className="flex gap-3 text-slate-700">
+                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-slate-900 shrink-0" />
+                  <span><strong>Key Offerings:</strong> Loans Against Property & Working Capital Financing</span>
+                </li>
+                <li className="flex gap-3 text-slate-700">
+                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-slate-900 shrink-0" />
+                  <span><strong>Key Leadership:</strong> MD Mr. Rajesh Kumar Sodhani & WTD Mr. Devi Dutt Agarwal</span>
+                </li>
+              </ul>
+
+              <div className="mt-8 rounded-xl bg-slate-900 p-5 text-white flex gap-3.5 items-start">
+                <FileText className="h-5 w-5 text-slate-300 mt-0.5 shrink-0" />
+                <div>
+                  <h4 className="text-xs uppercase tracking-wider text-slate-400 font-bold">RBI Registration</h4>
+                  <p className="text-sm font-semibold mt-1">
+                    REGISTRATION CERTIFICATE NO: 13.0069
+                  </p>
+                  <p className="text-xs text-slate-300 mt-1">
+                    Dated 24.02.1998
+                  </p>
                 </div>
-                <h3 className="mt-5 text-lg font-bold text-slate-900">{s.title}</h3>
-                <p className="mt-2 text-sm text-slate-600 leading-relaxed">{s.desc}</p>
-              </motion.div>
-            ))}
+              </div>
+            </div>
           </motion.div>
         </div>
       </div>

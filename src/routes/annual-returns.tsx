@@ -9,12 +9,26 @@ import mgt2021 from "@/assets/MGT-7/MGT-7-3132021-Oasis certified.pdf";
 import mgt2020 from "@/assets/MGT-7/OASIS MGT-7- 2020.pdf";
 import mgt2018 from "@/assets/MGT-7/Form MGT-7 -2018.signed.pdf";
 import mgt2017 from "@/assets/MGT-7/Form_MGT-7 Oasis 31.03.2017 - Signed.pdf";
+import formMgt7_25 from "@/assets/Forms/MGT-7_2025.pdf";
+import formMgt7_23_24 from "@/assets/Forms/FORM MGT7 (2023-24).pdf";
 
 export const Route = createFileRoute("/annual-returns")({
   component: AnnualReturnsPage,
 });
 
 const returns = [
+  {
+    year: "2024-25",
+    title: "Annual Return MGT-7 (F.Y. 2024-25)",
+    href: formMgt7_25,
+    filename: "MGT-7_2025.pdf",
+  },
+  {
+    year: "2023-24",
+    title: "Annual Return MGT-7 (F.Y. 2023-24)",
+    href: formMgt7_23_24,
+    filename: "FORM MGT7 (2023-24).pdf",
+  },
   {
     year: "2021-22",
     title: "Annual Return MGT-7 (F.Y. 2021-22)",

@@ -47,7 +47,7 @@ export function Contact() {
             Contact Information
           </h2>
           <p className="mt-4 text-slate-600 font-light max-w-2xl mx-auto">
-            Reach out to our team — we're here to help with your financial needs.
+            Reach out to our team. We're here to help with your financial needs.
           </p>
         </motion.div>
 
@@ -95,10 +95,10 @@ export function Contact() {
                 <Phone className="h-4 w-4 text-slate-400" />
                 9257056969
               </a>
-              <p className="flex items-center gap-2 text-slate-700">
+              {/* <p className="flex items-center gap-2 text-slate-700">
                 <User className="h-4 w-4 text-slate-400" />
-                Mr. Rajesh Kumar Sodhani
-              </p>
+                Mr. Manish Nathawat
+              </p> */}
               <a
                 href="mailto:admin@oasiscaps.com"
                 className="flex items-center gap-2 text-slate-700 hover:text-slate-900 transition-colors break-all"

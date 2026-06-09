@@ -117,7 +117,7 @@ function AGMNoticesPage() {
                 Notices & Circulars
               </h1>
               <p className="mt-2 text-slate-600 text-sm sm:text-base">
-                Access and download notice documents of the Annual General Meetings (AGM) of Oasis Securities Limited.
+                Access and download notice documents of the Annual General Meetings (AGM) and Extra Ordinary General Meetings (EOGM) of Oasis Securities Limited.
               </p>
             </div>
 

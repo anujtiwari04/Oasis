@@ -38,6 +38,19 @@ function ContactDetailPage() {
                     </address>
                   </div>
                 </div>
+
+                <div className="flex gap-4 items-start">
+                  <MapPin className="h-5 w-5 text-slate-400 shrink-0 mt-1" />
+                  <div>
+                    <h2 className="text-sm font-bold text-slate-900 uppercase tracking-wider">Branch Office</h2>
+                    <address className="mt-3 not-italic text-slate-600 leading-relaxed text-base font-normal">
+                      2nd Floor, C 373<br />
+                      Behind Amar Jain Hospital,<br />
+                      Block C, Vaishali Nagar,<br />
+                      Jaipur – 302021
+                    </address>
+                  </div>
+                </div>
               </div>
 
               {/* Right Column: Communications & Grievance */}
