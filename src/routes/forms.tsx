@@ -77,7 +77,7 @@ const forms = [
     filename: "MGT-7_2025.pdf",
   },
   {
-    title: "Annual Reports",
+    title: "Annual Returns",
     href: "/annual-returns",
     isRedirect: true,
   },

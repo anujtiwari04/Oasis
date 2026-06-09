@@ -29,7 +29,7 @@ const corporateItems = [
   { href: "/key-management-personnel", label: "Key Management Personnel" },
   { href: "/compliance-officer", label: "Compliance Officer" },
   { href: "/policies", label: "Policies" },
-  { href: "/agm-notices", label: "AGM/EOGM" },
+  { href: "/agm-notices", label: "AGM/EOGM Results" },
   { href: "/board-meetings-notices", label: "Board Meetings Notices" },
   { href: "/financial-results", label: "Financial Results" },
   { href: "/shareholding-pattern", label: "Shareholding pattern" },
@@ -66,8 +66,8 @@ const navLinks: NavItem[] = [
   { href: "/", label: "Home" },
   { href: "/#about", label: "About" },
   { href: "/#corporate", label: "Corporate", children: corporateItems },
-  { href: "/#open-offers", label: "Open Offers 2023", children: openOffers2023Items },
-  { href: "/#links", label: "Links" },
+  // { href: "/#open-offers", label: "Open Offers 2023", children: openOffers2023Items },
+  // { href: "/#links", label: "Links" },
   { href: "/contact", label: "Contact" },
 ];
 

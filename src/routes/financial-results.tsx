@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState, useMemo } from "react";
-import { Download, FileText, Search, Filter } from "lucide-react";
+import { Download, FileText } from "lucide-react";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 
@@ -392,17 +391,6 @@ const rawResults = [
 ];
 
 function FinancialResultsPage() {
-  const [search, setSearch] = useState("");
-  const [activeTab, setActiveTab] = useState<"all" | "audited" | "unaudited">("all");
-
-  const filteredResults = useMemo(() => {
-    return rawResults.filter((item) => {
-      const matchesSearch = item.title.toLowerCase().includes(search.toLowerCase());
-      const matchesTab = activeTab === "all" || item.type === activeTab;
-      return matchesSearch && matchesTab;
-    });
-  }, [search, activeTab]);
-
   return (
     <div className="min-h-screen bg-white text-slate-900 antialiased flex flex-col justify-between">
       <div>
@@ -423,38 +411,6 @@ function FinancialResultsPage() {
               </div>
             </div>
 
-            {/* Filter and Search Bar */}
-            <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 mb-6 flex flex-col sm:flex-row items-center gap-4 justify-between">
-              {/* Category tabs */}
-              <div className="flex bg-slate-200/60 p-1 rounded-lg w-full sm:w-auto shrink-0">
-                {(["all", "audited", "unaudited"] as const).map((tab) => (
-                  <button
-                    key={tab}
-                    onClick={() => setActiveTab(tab)}
-                    className={`flex-1 sm:flex-initial px-4 py-1.5 text-xs font-bold rounded-md capitalize transition-all ${
-                      activeTab === tab
-                        ? "bg-white text-slate-900 shadow-sm"
-                        : "text-slate-500 hover:text-slate-900"
-                    }`}
-                  >
-                    {tab}
-                  </button>
-                ))}
-              </div>
-
-              {/* Search input */}
-              <div className="relative w-full sm:max-w-xs">
-                <Search className="absolute left-3 top-2.5 h-4 w-4 text-slate-400" />
-                <input
-                  type="text"
-                  placeholder="Search statements..."
-                  value={search}
-                  onChange={(e) => setSearch(e.target.value)}
-                  className="w-full bg-white border border-slate-200 rounded-lg pl-9 pr-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-slate-900/10 placeholder-slate-400"
-                />
-              </div>
-            </div>
-
             {/* Results Table */}
             <div className="overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm">
               <table className="w-full border-collapse text-left">
@@ -463,58 +419,34 @@ function FinancialResultsPage() {
                     <th scope="col" className="px-5 py-4 text-sm font-semibold uppercase tracking-wide">
                       Document Title
                     </th>
-                    <th scope="col" className="w-32 px-5 py-4 text-sm font-semibold uppercase tracking-wide">
-                      Category
-                    </th>
                     <th scope="col" className="w-48 px-5 py-4 text-sm font-semibold uppercase tracking-wide text-right">
                       Action
                     </th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-200">
-                  {filteredResults.length > 0 ? (
-                    filteredResults.map((result) => (
-                      <tr key={result.title} className="hover:bg-slate-50 transition-colors">
-                        <td className="px-5 py-4">
-                          <div className="flex items-center gap-3">
-                            <FileText className="h-5 w-5 text-slate-400 shrink-0" />
-                            <span className="text-sm font-semibold text-slate-800 leading-snug">
-                              {result.title}
-                            </span>
-                          </div>
-                        </td>
-                        <td className="px-5 py-4">
-                          <span
-                            className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold uppercase tracking-wide ${
-                              result.type === "audited"
-                                ? "bg-emerald-50 text-emerald-700"
-                                : result.type === "unaudited"
-                                ? "bg-amber-50 text-amber-700"
-                                : "bg-indigo-50 text-indigo-700"
-                            }`}
-                          >
-                            {result.type}
+                  {rawResults.map((result) => (
+                    <tr key={result.title} className="hover:bg-slate-50 transition-colors">
+                      <td className="px-5 py-4">
+                        <div className="flex items-center gap-3">
+                          <FileText className="h-5 w-5 text-slate-400 shrink-0" />
+                          <span className="text-sm font-semibold text-slate-800 leading-snug">
+                            {result.title}
                           </span>
-                        </td>
-                        <td className="px-5 py-4 text-right">
-                          <a
-                            href={result.href}
-                            download={result.filename}
-                            className="inline-flex items-center gap-1.5 rounded-lg bg-slate-900 px-3.5 py-2 text-xs font-semibold text-white transition-colors hover:bg-slate-800 focus:outline-none"
-                          >
-                            <Download className="h-3.5 w-3.5" aria-hidden="true" />
-                            Download / View PDF
-                          </a>
-                        </td>
-                      </tr>
-                    ))
-                  ) : (
-                    <tr>
-                      <td colSpan={3} className="px-5 py-12 text-center text-sm text-slate-500 font-medium">
-                        No financial results found matching your search.
+                        </div>
+                      </td>
+                      <td className="px-5 py-4 text-right">
+                        <a
+                          href={result.href}
+                          download={result.filename}
+                          className="inline-flex items-center gap-1.5 rounded-lg bg-slate-900 px-3.5 py-2 text-xs font-semibold text-white transition-colors hover:bg-slate-800 focus:outline-none"
+                        >
+                          <Download className="h-3.5 w-3.5" aria-hidden="true" />
+                          Download / View PDF
+                        </a>
                       </td>
                     </tr>
-                  )}
+                  ))}
                 </tbody>
               </table>
             </div>

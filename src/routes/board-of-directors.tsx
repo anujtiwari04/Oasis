@@ -58,7 +58,7 @@ const directors = [
   {
     srNo: 7,
     name: "Tushar Agarwal",
-    designation: "Director",
+    designation: "Additional Director",
     residentialAddress: "131 B Gayatri Nagar B Jaipur-302018 Rajasthan",
     pan: "BCAPA1416K",
     uidDin: "10932962",

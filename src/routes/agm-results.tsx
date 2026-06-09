@@ -16,7 +16,7 @@ import agm2021_proc from "@/assets/AGM Results/35th-AGM-Outcome-Proceedings.pdf"
 import agm2022_proc from "@/assets/AGM Results/Oasis_Sec_Ltd_36th_AGM_Outcome -Proceedings_2023.pdf";
 import agm2023_proc from "@/assets/AGM Results/AGM-proceeding-oasis.pdf";
 import agm2024_proc from "@/assets/AGM Results/Proceedings-2025.pdf";
-import noticeOfEGM from "@/assets/Notice of EGM.pdf";
+import egmProceeding from "@/assets/AGM Results/EGM Proceeding.pdf";
 
 export const Route = createFileRoute("/agm-results")({
   component: AGMResultsPage,
@@ -26,7 +26,7 @@ const agmResults = [
   {
     year: "EOGM",
     reports: [
-      { title: "Notice of EGM", href: noticeOfEGM, filename: "Notice of EGM.pdf" }
+      { title: "EGM Proceeding", href: egmProceeding, filename: "EGM Proceeding.pdf" }
     ]
   },
   {
@@ -109,10 +109,10 @@ function AGMResultsPage() {
             <div className="mb-8">
               <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">Corporate</p>
               <h1 className="mt-2 text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl">
-                AGM Results
+                AGM/EOGM Results
               </h1>
               <p className="mt-2 text-slate-600 text-sm sm:text-base">
-                Access and download Annual General Meeting (AGM) outcome proceedings and results of Oasis Securities Limited.
+                Access and download Annual General Meeting (AGM) and Extra Ordinary General Meeting (EOGM) outcomes proceedings and results of Oasis Securities Limited.
               </p>
             </div>
 
