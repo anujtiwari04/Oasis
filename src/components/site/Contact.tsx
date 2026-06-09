@@ -113,6 +113,13 @@ export function Contact() {
                 <Mail className="h-4 w-4 text-slate-400 shrink-0" />
                 sodhanioasis@gmail.com
               </a>
+              <a
+                href="mailto:cssodhanioasis@gmail.com"
+                className="flex items-center gap-2 text-slate-700 hover:text-slate-900 transition-colors break-all"
+              >
+                <Mail className="h-4 w-4 text-slate-400 shrink-0" />
+                cssodhanioasis@gmail.com
+              </a>
             </div>
           </motion.div>
         </motion.div>

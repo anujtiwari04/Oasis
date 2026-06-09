@@ -96,6 +96,12 @@ function ContactDetailPage() {
                       >
                         sodhanioasis@gmail.com
                       </a>
+                      <a
+                        href="mailto:cssodhanioasis@gmail.com"
+                        className="block text-slate-600 hover:text-slate-900 transition-colors"
+                      >
+                        cssodhanioasis@gmail.com
+                      </a>
                     </div>
                   </div>
                 </div>
