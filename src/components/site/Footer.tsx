@@ -9,8 +9,12 @@ export function Footer() {
   ];
 
   return (
-    <footer className="bg-slate-900 text-slate-400 py-8" aria-label="Site footer">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <footer className="bg-brand-green text-white/50" aria-label="Site footer">
+      {/* Gold accent rule */}
+      <div className="h-px bg-brand-gold/30" />
+
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+        {/* Top row: Logo + Nav */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
           {/* Logo & Company Name */}
           <div className="flex items-center gap-2">
@@ -29,17 +33,21 @@ export function Footer() {
                 key={l.label}
                 href={l.href}
                 download={l.download}
-                className="text-sm text-slate-400 hover:text-white transition-colors"
+                className="text-sm text-white/50 hover:text-brand-gold transition-colors"
               >
                 {l.label}
               </a>
             ))}
           </nav>
-
-          <p className="text-xs text-slate-500 text-center sm:text-right">
-            © Copyright ISIL 2010. All rights reserved.
-          </p>
         </div>
+
+        {/* Separator */}
+        <div className="h-px bg-white/10 my-6" />
+
+        {/* Bottom row: Copyright */}
+        <p className="text-xs text-white/30 text-center">
+          © Copyright ISIL 2010. All rights reserved.
+        </p>
       </div>
     </footer>
   );
