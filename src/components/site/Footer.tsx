@@ -5,7 +5,7 @@ export function Footer() {
   const links = [
     { href: "/contact", label: "Contact Us" },
     { href: generalFAQ, label: "FAQ", download: "GeneralFAQ's.pdf" },
-    { href: "#", label: "Disclaimer" },
+    // { href: "#", label: "Disclaimer" },
   ];
 
   return (
@@ -23,7 +23,7 @@ export function Footer() {
               alt="Oasis Securities Limited"
               className="h-8 w-auto object-contain brightness-0 invert"
             />
-            <span className="font-bold text-white text-sm">OASIS SECURITIES LTD</span>
+            <span className="font-bold text-white text-sm">OASIS SECURITIES LTD.</span>
           </div>
 
           {/* Links navigation */}
