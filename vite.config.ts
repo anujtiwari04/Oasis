@@ -3,7 +3,6 @@ import { tanstackStart } from "@tanstack/react-start/plugin/vite";
 import viteReact from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import tsConfigPaths from "vite-tsconfig-paths";
-import { nitro } from "nitro/vite";
 
 const s3PdfResolverPlugin = () => {
   const S3_BUCKET_URL = "https://oasissecurities.s3.us-east-1.amazonaws.com";
@@ -19,7 +18,6 @@ const s3PdfResolverPlugin = () => {
     },
     load(id: string) {
       if (id.endsWith(".pdf")) {
-        // Map imports like '@/assets/Notice of EGM.pdf' to 'assets/Notice of EGM.pdf'
         let relativePath = id;
         if (relativePath.startsWith("@/")) {
           relativePath = relativePath.slice(2);
@@ -32,7 +30,6 @@ const s3PdfResolverPlugin = () => {
           relativePath = relativePath.slice(srcAssetsIdx + 4);
         }
         
-        // Clean multiple slashes
         relativePath = relativePath.replace(/\/+/g, "/");
 
         const s3Url = `${S3_BUCKET_URL}/${relativePath}`;
@@ -43,7 +40,7 @@ const s3PdfResolverPlugin = () => {
   };
 };
 
-export default defineConfig(({ command }) => {
+export default defineConfig(() => {
   return {
     resolve: {
       alias: {
@@ -70,19 +67,13 @@ export default defineConfig(({ command }) => {
             specifiers: ["server-only"],
           },
         },
-        server: { entry: "server" },
+        // Enable static prerendering here:
+        prerender: {
+          enabled: true,
+          crawlLinks: true,
+        },
       }),
       viteReact(),
-      // Only run Nitro during build to match original preset configuration
-      command === "build" &&
-        nitro({
-          preset: "vercel",
-          output: {
-            dir: ".vercel/output",
-            publicDir: ".vercel/output/static",
-            serverDir: ".vercel/output/functions/__server.func",
-          },
-        }),
-    ].filter(Boolean),
+    ],
   };
 });
