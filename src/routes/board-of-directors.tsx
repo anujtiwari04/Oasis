@@ -41,14 +41,6 @@ const directors = [
   },
   {
     srNo: 5,
-    name: "Manish Bihani",
-    designation: "Director",
-    residentialAddress: "D-2/401, Kamal Apartment-1, Banipark Ram Mandir, Jaipur-302006, Rajasthan, India",
-    pan: "AFMPB6832L",
-    uidDin: "03466971",
-  },
-  {
-    srNo: 6,
     name: "Meenu Kabra",
     designation: "Director",
     residentialAddress: "F-6/190, Radha Kuteer, Chitrakoot Scheme, Jaipur-302021, Rajasthan, India",
@@ -56,7 +48,7 @@ const directors = [
     uidDin: "10269674",
   },
   {
-    srNo: 7,
+    srNo: 6,
     name: "Tushar Agarwal",
     designation: "Additional Director",
     residentialAddress: "131 B Gayatri Nagar B Jaipur-302018 Rajasthan",
