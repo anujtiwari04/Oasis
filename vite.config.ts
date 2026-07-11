@@ -5,6 +5,44 @@ import tailwindcss from "@tailwindcss/vite";
 import tsConfigPaths from "vite-tsconfig-paths";
 import { nitro } from "nitro/vite";
 
+const s3PdfResolverPlugin = () => {
+  const S3_BUCKET_URL = "https://oasissecurities.s3.us-east-1.amazonaws.com";
+
+  return {
+    name: "s3-pdf-resolver",
+    enforce: "pre" as const,
+    resolveId(source: string) {
+      if (source.endsWith(".pdf")) {
+        return source;
+      }
+      return null;
+    },
+    load(id: string) {
+      if (id.endsWith(".pdf")) {
+        // Map imports like '@/assets/Notice of EGM.pdf' to 'assets/Notice of EGM.pdf'
+        let relativePath = id;
+        if (relativePath.startsWith("@/")) {
+          relativePath = relativePath.slice(2);
+        }
+        if (relativePath.startsWith("/assets/")) {
+          relativePath = relativePath.slice(1);
+        }
+        const srcAssetsIdx = relativePath.indexOf("src/assets/");
+        if (srcAssetsIdx !== -1) {
+          relativePath = relativePath.slice(srcAssetsIdx + 4);
+        }
+        
+        // Clean multiple slashes
+        relativePath = relativePath.replace(/\/+/g, "/");
+
+        const s3Url = `${S3_BUCKET_URL}/${relativePath}`;
+        return `export default ${JSON.stringify(encodeURI(s3Url))};`;
+      }
+      return null;
+    },
+  };
+};
+
 export default defineConfig(({ command }) => {
   return {
     resolve: {
@@ -21,6 +59,7 @@ export default defineConfig(({ command }) => {
       ],
     },
     plugins: [
+      s3PdfResolverPlugin(),
       tailwindcss(),
       tsConfigPaths({ projects: ["./tsconfig.json"] }),
       tanstackStart({
