@@ -4,6 +4,7 @@ import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 
 // Asset imports
+import ar2026 from "@/assets/annual report/annual-report-2025-26.pdf";
 import ar2025 from "@/assets/annual report/annual-report-revised.pdf";
 import ar2024 from "@/assets/annual report/OASIS_ANNUAL REPORT - revised.pdf";
 import ar2023 from "@/assets/annual report/Oasis-Securities-Limited-36th-Annual-Report-2022-2023.pdf";
@@ -26,6 +27,12 @@ export const Route = createFileRoute("/annual-reports")({
 });
 
 const reports = [
+  {
+    year: "2025-26",
+    title: "Annual Report 2025-26",
+    href: ar2026,
+    filename: "annual-report-2025-26.pdf",
+  },
   {
     year: "2024-25",
     title: "Annual Report 2024-25",

@@ -16,6 +16,7 @@ import notice2022 from "@/assets/Oasis_Sec_Ltd_Notice_of_AGM_2021-2022.pdf";
 import notice2023 from "@/assets/OASIS-Notice-of-AGM-2022-23.pdf";
 import notice2024 from "@/assets/OASIS-Notice-of-AGM-2023-24.pdf";
 import notice2025 from "@/assets/AGM-notice-24-25.pdf";
+import notice2026 from "@/assets/AGM-notice-25-26.pdf";
 import noticeOfEGM from "@/assets/Notice of EGM.pdf";
 
 export const Route = createFileRoute("/agm-notices")({
@@ -28,6 +29,12 @@ const notices = [
     title: "Notice of EGM",
     href: noticeOfEGM,
     filename: "Notice of EGM.pdf",
+  },
+  {
+    year: "2025-26",
+    title: "AGM Notice for Annual General Meeting 2025-26",
+    href: notice2026,
+    filename: "AGM-notice-25-26.pdf",
   },
   {
     year: "2024-25",
