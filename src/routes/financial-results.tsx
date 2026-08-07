@@ -4,6 +4,7 @@ import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 
 // Asset imports
+import resJune2026 from "@/assets/FINANCIAL RESULT 30th JUNE 2026.pdf";
 import resDec2025 from "@/assets/FINANCIAL-RESULTS_DEC2025.pdf";
 import resResults2026 from "@/assets/FinancialResults2026.pdf";
 import resResult from "@/assets/FINANCIALS RESULT.pdf";
@@ -64,6 +65,12 @@ export const Route = createFileRoute("/financial-results")({
 });
 
 const rawResults = [
+  {
+    title: "FINANCIAL RESULT 30th JUNE 2026",
+    href: resJune2026,
+    filename: "FINANCIAL RESULT 30th JUNE 2026.pdf",
+    type: "unaudited",
+  },
   {
     title: "Financial Results Mar 2026",
     href: resResults2026,
