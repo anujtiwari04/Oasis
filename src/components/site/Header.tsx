@@ -64,7 +64,7 @@ interface NavItem {
 
 const navLinks: NavItem[] = [
   { href: "/", label: "Home" },
-  { href: "/#about", label: "About" },
+  { href: "/about", label: "About" },
   { href: "/#corporate", label: "Corporate", children: corporateItems },
   // { href: "/#open-offers", label: "Open Offers 2023", children: openOffers2023Items },
   // { href: "/#links", label: "Links" },

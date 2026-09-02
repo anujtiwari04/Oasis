@@ -49,6 +49,7 @@ import { Route as AnnualReturnsRouteImport } from './routes/annual-returns'
 import { Route as AnnualReportsRouteImport } from './routes/annual-reports'
 import { Route as AgmResultsRouteImport } from './routes/agm-results'
 import { Route as AgmNoticesRouteImport } from './routes/agm-notices'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
 const ShareholdingPatternSept2016Route =
@@ -273,6 +274,11 @@ const AgmNoticesRoute = AgmNoticesRouteImport.update({
   path: '/agm-notices',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -281,6 +287,7 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/agm-notices': typeof AgmNoticesRoute
   '/agm-results': typeof AgmResultsRoute
   '/annual-reports': typeof AnnualReportsRoute
@@ -324,6 +331,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/agm-notices': typeof AgmNoticesRoute
   '/agm-results': typeof AgmResultsRoute
   '/annual-reports': typeof AnnualReportsRoute
@@ -368,6 +376,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/agm-notices': typeof AgmNoticesRoute
   '/agm-results': typeof AgmResultsRoute
   '/annual-reports': typeof AnnualReportsRoute
@@ -413,6 +422,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/about'
     | '/agm-notices'
     | '/agm-results'
     | '/annual-reports'
@@ -456,6 +466,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/about'
     | '/agm-notices'
     | '/agm-results'
     | '/annual-reports'
@@ -499,6 +510,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/about'
     | '/agm-notices'
     | '/agm-results'
     | '/annual-reports'
@@ -543,6 +555,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
   AgmNoticesRoute: typeof AgmNoticesRoute
   AgmResultsRoute: typeof AgmResultsRoute
   AnnualReportsRoute: typeof AnnualReportsRoute
@@ -867,6 +880,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AgmNoticesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -879,6 +899,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
   AgmNoticesRoute: AgmNoticesRoute,
   AgmResultsRoute: AgmResultsRoute,
   AnnualReportsRoute: AnnualReportsRoute,

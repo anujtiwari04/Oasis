@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import { Building2, FileText } from "lucide-react";
+import { Building2, FileText, ArrowRight, Users } from "lucide-react";
 
-export function About() {
+export function AboutSection() {
   return (
     <section id="about" className="scroll-mt-24 py-24 sm:py-28 bg-brand-green" aria-label="About Us">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -20,17 +20,36 @@ export function About() {
             <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-tight">
               About Oasis Securities Limited
             </h2>
-            
+
             <div className="mt-8 space-y-6 text-white/75 text-base sm:text-lg leading-relaxed font-light">
               <p>
-                <strong className="text-white font-semibold">OASIS SECURITIES LIMITED</strong>, a public limited company, originally incorporated on 06th November 1986 is listed on the Bombay Stock Exchange (BSE Scrip Code: 512489) and also an RBI- registered, non-deposit taking Non-Banking Financial Company (NBFC) headquartered in Mumbai.
+                <strong className="text-white font-semibold">OASIS SECURITIES LIMITED</strong>, a public limited company, originally incorporated on 06th November 1986 is listed on the Bombay Stock Exchange (BSE Scrip Code: 512489) and also an RBI-registered, non-deposit taking Non-Banking Financial Company (NBFC) headquartered in Mumbai.
               </p>
               <p>
-                As an NBFC, our primary business is financing and investment activities. Classified as an 'Base-Layer NBFC' by the RBI pursuant to Scale Based Regulations, the Company provides loans against property for business or personal needs as well as working capital for business expansion purposes at reasonable interest rates, catering to diverse borrower needs while maintaining a strong focus on credit quality and risk management.
+                As an NBFC, our primary business is financing and investment activities. Classified as a 'Base-Layer NBFC' by the RBI pursuant to Scale Based Regulations, the Company provides loans against property for business or personal needs as well as working capital for business expansion purposes at reasonable interest rates, catering to diverse borrower needs while maintaining a strong focus on credit quality and risk management.
               </p>
               <p>
                 Led by Managing Director Mr. Rajesh Kumar Sodhani and Whole Time Director Mr. Devi Dutt Agarwal, the Company is committed to responsible lending, transparency, and delivering long-term value to our investors and clients.
               </p>
+            </div>
+
+            {/* Navigation Button to Full About & Leadership Page */}
+            <div className="mt-10 flex flex-wrap items-center gap-4">
+              <a
+                href="/about"
+                className="group inline-flex items-center gap-2 rounded-[4px] bg-brand-gold px-6 py-3.5 text-sm font-semibold text-brand-charcoal transition-all hover:bg-brand-gold-light shadow-sm"
+              >
+                <Users className="h-4 w-4 text-brand-charcoal" />
+                <span>Know More</span>
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </a>
+
+              {/* <a
+                href="/about"
+                className="inline-flex items-center gap-2 rounded-[4px] border border-white/20 px-6 py-3.5 text-sm font-medium text-white hover:bg-white/10 transition-colors"
+              >
+                Read Full Story
+              </a> */}
             </div>
           </motion.div>
 
@@ -47,7 +66,7 @@ export function About() {
                 <Building2 className="h-5 w-5 text-brand-gold" />
                 Company Overview & Highlights
               </h3>
-              
+
               <ul className="mt-6 space-y-4">
                 <li className="flex gap-3 text-white/70">
                   <span className="mt-2 h-1.5 w-1.5 rounded-full bg-brand-gold shrink-0" />
@@ -94,3 +113,4 @@ export function About() {
     </section>
   );
 }
+
