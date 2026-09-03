@@ -42,12 +42,18 @@ import np33 from "@/assets/Newspaper Publications/Newspaper Publication_DECEMBER
 import np34 from "@/assets/Newspaper Publications/NEWSPAPER PUBLICATION_DECEMBER 2025.pdf";
 import np35 from "@/assets/Newspaper Publications/Newspaper Publication_JUNE 2025.pdf";
 import np36 from "@/assets/Newspaper Publications/Newspaper Publication_MARCH 2025.pdf";
+import npJune2026 from "@/assets/Newspaper publication of unaudited financial of quarter ended 30.06.2026.pdf";
 
 export const Route = createFileRoute("/newspaper-publications")({
   component: NewspaperPublicationsPage,
 });
 
 const publications = [
+  {
+    title: "Newspaper publication of unaudited financial of quarter ended 30.06.2026",
+    href: npJune2026,
+    filename: "Newspaper publication of unaudited financial of quarter ended 30.06.2026.pdf",
+  },
   { title: "Newspaper Publication 2026", href: np2026, filename: "Newspaper Publication 2026.pdf" },
   { title: "Oasis publishing unaudited fin results 30.09.2023 ML 09.11.2023", href: np1, filename: "Oasis_published_unaudited fin results_30.09.2023_ML_09.11.2023.pdf" },
   { title: "Oasis published unaudited fin results 30.09.2023 FE 09.11.2023", href: np2, filename: "Oasis_published_unaudited fin results_30.09.2023_FE_09.11.2023.pdf" },

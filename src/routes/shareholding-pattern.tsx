@@ -45,6 +45,7 @@ import dec2023 from "@/assets/Shareholding pattern/Dec_2023.pdf";
 import mar2024 from "@/assets/Shareholding pattern/march 2024.pdf";
 import jul2024 from "@/assets/Shareholding pattern/shareholding-pattern-18.07.2024.pdf";
 import sep2024 from "@/assets/Shareholding pattern/shareholding-pattern-30.09.2024.pdf";
+import shpJune2026 from "@/assets/Shareholding pattern for quarter 30.06.2026.pdf";
 
 export const Route = createFileRoute("/shareholding-pattern")({
   component: ShareholdingPatternPage,
@@ -136,6 +137,11 @@ const shareholdingData: PatternItem[] = [
   { title: "September 2025" }, // empty
   { title: "December 2025" }, // empty
   { title: "March 2026" }, // empty
+  {
+    title: "Shareholding pattern for quarter 30.06.2026",
+    pdf: shpJune2026,
+    filename: "Shareholding pattern for quarter 30.06.2026.pdf",
+  },
 ];
 
 function ShareholdingPatternPage() {

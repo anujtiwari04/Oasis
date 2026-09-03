@@ -36,20 +36,20 @@ export function AboutSection() {
             {/* Navigation Button to Full About & Leadership Page */}
             <div className="mt-10 flex flex-wrap items-center gap-4">
               <a
-                href="/about"
+                href="/about#leadership"
                 className="group inline-flex items-center gap-2 rounded-[4px] bg-brand-gold px-6 py-3.5 text-sm font-semibold text-brand-charcoal transition-all hover:bg-brand-gold-light shadow-sm"
               >
                 <Users className="h-4 w-4 text-brand-charcoal" />
-                <span>Know More</span>
+                <span>Meet Our Team</span>
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </a>
 
-              {/* <a
+              <a
                 href="/about"
                 className="inline-flex items-center gap-2 rounded-[4px] border border-white/20 px-6 py-3.5 text-sm font-medium text-white hover:bg-white/10 transition-colors"
               >
                 Read Full Story
-              </a> */}
+              </a>
             </div>
           </motion.div>
 
