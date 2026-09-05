@@ -5,7 +5,6 @@ import oasisLogo from "@/assets/Oasis Logo.png";
 import postalBallotNotice from "@/assets/postal-ballot-notice.pdf";
 import compositionOfCommittees from "@/assets/COMPOSITION OF COMMITTEES.pdf";
 import bookClosure2025 from "@/assets/book-closure-2025.pdf";
-import outcomeOfBoardMeeting from "@/assets/OUTCOME OF BOARD MEETING.pdf";
 import dlofAsset from "@/assets/DLOF.pdf";
 
 // Open Offers 2023 PDF Imports
@@ -42,7 +41,7 @@ const corporateItems = [
   { href: "#", label: "Circulars & Disclosures" },
   { href: "/forms", label: "Forms" },
   { href: "/newspaper-publications", label: "Newspaper Publications" },
-  { href: outcomeOfBoardMeeting, label: "Outcome", download: "OUTCOME OF BOARD MEETING.pdf" },
+  { href: "/outcome-of-board-meetings", label: "Outcome" },
   { href: dlofAsset, label: "DLOF", download: "DLOF.pdf" },
 ];
 

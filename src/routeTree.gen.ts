@@ -36,6 +36,7 @@ import { Route as ShareTransferAgentRouteImport } from './routes/share-transfer-
 import { Route as ScrutinizersReportRouteImport } from './routes/scrutinizers-report'
 import { Route as RscaReportsRouteImport } from './routes/rsca-reports'
 import { Route as PoliciesRouteImport } from './routes/policies'
+import { Route as OutcomeOfBoardMeetingsRouteImport } from './routes/outcome-of-board-meetings'
 import { Route as NewspaperPublicationsRouteImport } from './routes/newspaper-publications'
 import { Route as KeyManagementPersonnelRouteImport } from './routes/key-management-personnel'
 import { Route as InvestorGrievanceRouteImport } from './routes/investor-grievance'
@@ -209,6 +210,11 @@ const PoliciesRoute = PoliciesRouteImport.update({
   path: '/policies',
   getParentRoute: () => rootRouteImport,
 } as any)
+const OutcomeOfBoardMeetingsRoute = OutcomeOfBoardMeetingsRouteImport.update({
+  id: '/outcome-of-board-meetings',
+  path: '/outcome-of-board-meetings',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const NewspaperPublicationsRoute = NewspaperPublicationsRouteImport.update({
   id: '/newspaper-publications',
   path: '/newspaper-publications',
@@ -301,6 +307,7 @@ export interface FileRoutesByFullPath {
   '/investor-grievance': typeof InvestorGrievanceRoute
   '/key-management-personnel': typeof KeyManagementPersonnelRoute
   '/newspaper-publications': typeof NewspaperPublicationsRoute
+  '/outcome-of-board-meetings': typeof OutcomeOfBoardMeetingsRoute
   '/policies': typeof PoliciesRoute
   '/rsca-reports': typeof RscaReportsRoute
   '/scrutinizers-report': typeof ScrutinizersReportRoute
@@ -345,6 +352,7 @@ export interface FileRoutesByTo {
   '/investor-grievance': typeof InvestorGrievanceRoute
   '/key-management-personnel': typeof KeyManagementPersonnelRoute
   '/newspaper-publications': typeof NewspaperPublicationsRoute
+  '/outcome-of-board-meetings': typeof OutcomeOfBoardMeetingsRoute
   '/policies': typeof PoliciesRoute
   '/rsca-reports': typeof RscaReportsRoute
   '/scrutinizers-report': typeof ScrutinizersReportRoute
@@ -390,6 +398,7 @@ export interface FileRoutesById {
   '/investor-grievance': typeof InvestorGrievanceRoute
   '/key-management-personnel': typeof KeyManagementPersonnelRoute
   '/newspaper-publications': typeof NewspaperPublicationsRoute
+  '/outcome-of-board-meetings': typeof OutcomeOfBoardMeetingsRoute
   '/policies': typeof PoliciesRoute
   '/rsca-reports': typeof RscaReportsRoute
   '/scrutinizers-report': typeof ScrutinizersReportRoute
@@ -436,6 +445,7 @@ export interface FileRouteTypes {
     | '/investor-grievance'
     | '/key-management-personnel'
     | '/newspaper-publications'
+    | '/outcome-of-board-meetings'
     | '/policies'
     | '/rsca-reports'
     | '/scrutinizers-report'
@@ -480,6 +490,7 @@ export interface FileRouteTypes {
     | '/investor-grievance'
     | '/key-management-personnel'
     | '/newspaper-publications'
+    | '/outcome-of-board-meetings'
     | '/policies'
     | '/rsca-reports'
     | '/scrutinizers-report'
@@ -524,6 +535,7 @@ export interface FileRouteTypes {
     | '/investor-grievance'
     | '/key-management-personnel'
     | '/newspaper-publications'
+    | '/outcome-of-board-meetings'
     | '/policies'
     | '/rsca-reports'
     | '/scrutinizers-report'
@@ -569,6 +581,7 @@ export interface RootRouteChildren {
   InvestorGrievanceRoute: typeof InvestorGrievanceRoute
   KeyManagementPersonnelRoute: typeof KeyManagementPersonnelRoute
   NewspaperPublicationsRoute: typeof NewspaperPublicationsRoute
+  OutcomeOfBoardMeetingsRoute: typeof OutcomeOfBoardMeetingsRoute
   PoliciesRoute: typeof PoliciesRoute
   RscaReportsRoute: typeof RscaReportsRoute
   ScrutinizersReportRoute: typeof ScrutinizersReportRoute
@@ -789,6 +802,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PoliciesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/outcome-of-board-meetings': {
+      id: '/outcome-of-board-meetings'
+      path: '/outcome-of-board-meetings'
+      fullPath: '/outcome-of-board-meetings'
+      preLoaderRoute: typeof OutcomeOfBoardMeetingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/newspaper-publications': {
       id: '/newspaper-publications'
       path: '/newspaper-publications'
@@ -913,6 +933,7 @@ const rootRouteChildren: RootRouteChildren = {
   InvestorGrievanceRoute: InvestorGrievanceRoute,
   KeyManagementPersonnelRoute: KeyManagementPersonnelRoute,
   NewspaperPublicationsRoute: NewspaperPublicationsRoute,
+  OutcomeOfBoardMeetingsRoute: OutcomeOfBoardMeetingsRoute,
   PoliciesRoute: PoliciesRoute,
   RscaReportsRoute: RscaReportsRoute,
   ScrutinizersReportRoute: ScrutinizersReportRoute,

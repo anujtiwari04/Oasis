@@ -40,7 +40,7 @@ const directors = [
   {
     srNo: 6,
     name: "Tushar Agarwal",
-    designation: "Additional Director",
+    designation: "Director",
     uidDin: "10932962",
   },
 ];

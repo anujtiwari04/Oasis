@@ -3,6 +3,7 @@ import { Download } from "lucide-react";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 
+import scrutinizerReport2026 from "@/assets/VOTING RESULT AND SCRUTINIZER REPORT_01.09.2026.pdf";
 import scrutinizerReport2025 from "@/assets/scrutinizer-report-2025.pdf";
 import scrutinizerReport2024 from "@/assets/scrutinizer's-report.pdf";
 import scrutinizerReport2023 from "@/assets/Oasis_Sec_Ltd_36th_AGM_Scrutinizer's_Report_2023.pdf";
@@ -22,7 +23,28 @@ export const Route = createFileRoute("/scrutinizers-report")({
   component: ScrutinizersReportPage,
 });
 
-const reportRows = [
+interface ReportItem {
+  title: string;
+  href: string;
+  filename?: string;
+}
+
+interface ReportRow {
+  year: string;
+  reports: ReportItem[];
+}
+
+const reportRows: ReportRow[] = [
+  {
+    year: "2025-26",
+    reports: [
+      {
+        title: "VOTING RESULT AND SCRUTINIZER REPORT_01.09.2026",
+        href: scrutinizerReport2026,
+        filename: "VOTING RESULT AND SCRUTINIZER REPORT_01.09.2026.pdf",
+      },
+    ],
+  },
   {
     year: "2024-25",
     reports: [{ title: "scrutinizer-report-2025.pdf", href: scrutinizerReport2025 }],
@@ -121,7 +143,7 @@ function ScrutinizersReportPage() {
                             <span className="break-words text-sm font-medium text-slate-700">{report.title}</span>
                             <a
                               href={report.href}
-                              download={report.title}
+                              download={report.filename ?? report.title}
                               className="inline-flex w-fit items-center gap-2 rounded-lg bg-slate-900 px-3 py-2 text-sm font-semibold text-white transition-colors hover:bg-slate-800"
                             >
                               <Download className="h-4 w-4" aria-hidden="true" />
